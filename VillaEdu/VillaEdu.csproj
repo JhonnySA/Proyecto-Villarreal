@@ -68,7 +68,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clases\Estudiante.cs" />
     <Compile Include="controles_usuario\ComplexDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
