@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8502AE74-A6C2-4BB7-960A-30C35FD71C2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VillaEdu</RootNamespace>
+    <AssemblyName>VillaEdu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.10.6\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clases\Estudiante.cs" />
+    <Compile Include="controles_usuario\ComplexDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\ComplexDataGridView.Designer.cs">
+      <DependentUpon>ComplexDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles_usuario\cuDocente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\cuDocente.Designer.cs">
+      <DependentUpon>cuDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles_usuario\cuEstudiante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\cuEstudiante.Designer.cs">
+      <DependentUpon>cuEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles_usuario\cuMatricula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\cuMatricula.Designer.cs">
+      <DependentUpon>cuMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles_usuario\CustomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\CustomDialog.designer.cs">
+      <DependentUpon>CustomDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDocente.Designer.cs">
+      <DependentUpon>frmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmEstudiante.Designer.cs">
+      <DependentUpon>frmEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMatricula.Designer.cs">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmNuevaInstitucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmNuevaInstitucion.Designer.cs">
+      <DependentUpon>frmNuevaInstitucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmRegistroAcademicoEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmRegistroAcademicoEstudiante.Designer.cs">
+      <DependentUpon>frmRegistroAcademicoEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarApoderado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarApoderado.Designer.cs">
+      <DependentUpon>frmSeleccionarApoderado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarEstudiante.Designer.cs">
+      <DependentUpon>frmSeleccionarEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarGrupo.Designer.cs">
+      <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarInstitucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSeleccionarInstitucion.Designer.cs">
+      <DependentUpon>frmSeleccionarInstitucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="controles_usuario\ComplexDataGridView.resx">
+      <DependentUpon>ComplexDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles_usuario\cuDocente.resx">
+      <DependentUpon>cuDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles_usuario\cuEstudiante.resx">
+      <DependentUpon>cuEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles_usuario\cuMatricula.resx">
+      <DependentUpon>cuMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles_usuario\CustomDialog.resx">
+      <DependentUpon>CustomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDocente.resx">
+      <DependentUpon>frmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmEstudiante.resx">
+      <DependentUpon>frmEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMatricula.resx">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmNuevaInstitucion.resx">
+      <DependentUpon>frmNuevaInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmRegistroAcademicoEstudiante.resx">
+      <DependentUpon>frmRegistroAcademicoEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSeleccionarApoderado.resx">
+      <DependentUpon>frmSeleccionarApoderado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSeleccionarEstudiante.resx">
+      <DependentUpon>frmSeleccionarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSeleccionarGrupo.resx">
+      <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSeleccionarInstitucion.resx">
+      <DependentUpon>frmSeleccionarInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icons\" />
+    <Folder Include="reportes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
