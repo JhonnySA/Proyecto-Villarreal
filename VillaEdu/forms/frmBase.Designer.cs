@@ -36,13 +36,11 @@
             this.bunMoverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panLineaTopDetalle = new System.Windows.Forms.Panel();
             this.panMenuSlider = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnCalendario = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.panSMServicio = new System.Windows.Forms.Panel();
             this.btnSMMatricula = new System.Windows.Forms.Button();
             this.btnSMClasesPracticas = new System.Windows.Forms.Button();
-            this.panSMGrupo = new System.Windows.Forms.Panel();
-            this.btnSMAsignarDocente = new System.Windows.Forms.Button();
-            this.btnSMCrearGrupo = new System.Windows.Forms.Button();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnServicio = new System.Windows.Forms.Button();
@@ -55,6 +53,9 @@
             this.panSMPago = new System.Windows.Forms.Panel();
             this.btnSMPagoDocente = new System.Windows.Forms.Button();
             this.btnSMPagoCuotaMatricula = new System.Windows.Forms.Button();
+            this.panSMGrupo = new System.Windows.Forms.Panel();
+            this.btnSMAsignarDocente = new System.Windows.Forms.Button();
+            this.btnSMCrearGrupo = new System.Windows.Forms.Button();
             this.bunAnimLogo = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.lblUsuario = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -66,13 +67,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContenedor = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunAnimSlider = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.btnCalendario = new System.Windows.Forms.Button();
             this.panMenuSlider.SuspendLayout();
             this.panSMServicio.SuspendLayout();
-            this.panSMGrupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).BeginInit();
             this.panSMPago.SuspendLayout();
+            this.panSMGrupo.SuspendLayout();
             this.panFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -111,7 +111,6 @@
             this.panMenuSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panMenuSlider.Controls.Add(this.btnCalendario);
             this.panMenuSlider.Controls.Add(this.btnReporte);
-            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.panMenuSlider.Controls.Add(this.btnPago);
             this.panMenuSlider.Controls.Add(this.btnUsuario);
             this.panMenuSlider.Controls.Add(this.btnServicio);
@@ -123,6 +122,7 @@
             this.panMenuSlider.Controls.Add(this.pbxLogoMenuSlider);
             this.panMenuSlider.Controls.Add(this.panSMPago);
             this.panMenuSlider.Controls.Add(this.panSMGrupo);
+            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.bunAnimSlider.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.panMenuSlider.Dock = System.Windows.Forms.DockStyle.Left;
@@ -135,6 +135,27 @@
             this.panMenuSlider.Quality = 10;
             this.panMenuSlider.Size = new System.Drawing.Size(240, 744);
             this.panMenuSlider.TabIndex = 2;
+            // 
+            // btnCalendario
+            // 
+            this.btnCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.btnCalendario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunAnimLogo.SetDecoration(this.btnCalendario, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.btnCalendario, BunifuAnimatorNS.DecorationType.None);
+            this.btnCalendario.FlatAppearance.BorderSize = 0;
+            this.btnCalendario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
+            this.btnCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalendario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalendario.ForeColor = System.Drawing.Color.White;
+            this.btnCalendario.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendario.Image")));
+            this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendario.Location = new System.Drawing.Point(22, 539);
+            this.btnCalendario.Name = "btnCalendario";
+            this.btnCalendario.Size = new System.Drawing.Size(177, 47);
+            this.btnCalendario.TabIndex = 12;
+            this.btnCalendario.Text = "             Calendario";
+            this.btnCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalendario.UseVisualStyleBackColor = false;
             // 
             // btnReporte
             // 
@@ -207,56 +228,6 @@
             this.btnSMClasesPracticas.TabIndex = 12;
             this.btnSMClasesPracticas.Text = " ° Clases y/o Practicas";
             this.btnSMClasesPracticas.UseVisualStyleBackColor = false;
-            // 
-            // panSMGrupo
-            // 
-            this.panSMGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panSMGrupo.Controls.Add(this.btnSMAsignarDocente);
-            this.panSMGrupo.Controls.Add(this.btnSMCrearGrupo);
-            this.bunAnimSlider.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimLogo.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
-            this.panSMGrupo.Location = new System.Drawing.Point(22, 463);
-            this.panSMGrupo.Name = "panSMGrupo";
-            this.panSMGrupo.Size = new System.Drawing.Size(210, 75);
-            this.panSMGrupo.TabIndex = 12;
-            this.panSMGrupo.Visible = false;
-            // 
-            // btnSMAsignarDocente
-            // 
-            this.btnSMAsignarDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSMAsignarDocente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunAnimLogo.SetDecoration(this.btnSMAsignarDocente, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.btnSMAsignarDocente, BunifuAnimatorNS.DecorationType.None);
-            this.btnSMAsignarDocente.FlatAppearance.BorderSize = 0;
-            this.btnSMAsignarDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
-            this.btnSMAsignarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMAsignarDocente.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSMAsignarDocente.ForeColor = System.Drawing.Color.White;
-            this.btnSMAsignarDocente.Location = new System.Drawing.Point(3, 40);
-            this.btnSMAsignarDocente.Name = "btnSMAsignarDocente";
-            this.btnSMAsignarDocente.Size = new System.Drawing.Size(204, 30);
-            this.btnSMAsignarDocente.TabIndex = 13;
-            this.btnSMAsignarDocente.Text = "          ° Asignar docente";
-            this.btnSMAsignarDocente.UseVisualStyleBackColor = false;
-            // 
-            // btnSMCrearGrupo
-            // 
-            this.btnSMCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSMCrearGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunAnimLogo.SetDecoration(this.btnSMCrearGrupo, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.btnSMCrearGrupo, BunifuAnimatorNS.DecorationType.None);
-            this.btnSMCrearGrupo.FlatAppearance.BorderSize = 0;
-            this.btnSMCrearGrupo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
-            this.btnSMCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMCrearGrupo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSMCrearGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnSMCrearGrupo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMCrearGrupo.Location = new System.Drawing.Point(3, 3);
-            this.btnSMCrearGrupo.Name = "btnSMCrearGrupo";
-            this.btnSMCrearGrupo.Size = new System.Drawing.Size(204, 31);
-            this.btnSMCrearGrupo.TabIndex = 12;
-            this.btnSMCrearGrupo.Text = " ° Crear grupo";
-            this.btnSMCrearGrupo.UseVisualStyleBackColor = false;
             // 
             // btnPago
             // 
@@ -485,6 +456,57 @@
             this.btnSMPagoCuotaMatricula.TabIndex = 12;
             this.btnSMPagoCuotaMatricula.Text = " ° Cuota matricula";
             this.btnSMPagoCuotaMatricula.UseVisualStyleBackColor = false;
+            this.btnSMPagoCuotaMatricula.Click += new System.EventHandler(this.btnSMPagoCuotaMatricula_Click);
+            // 
+            // panSMGrupo
+            // 
+            this.panSMGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panSMGrupo.Controls.Add(this.btnSMAsignarDocente);
+            this.panSMGrupo.Controls.Add(this.btnSMCrearGrupo);
+            this.bunAnimSlider.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimLogo.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
+            this.panSMGrupo.Location = new System.Drawing.Point(22, 463);
+            this.panSMGrupo.Name = "panSMGrupo";
+            this.panSMGrupo.Size = new System.Drawing.Size(210, 75);
+            this.panSMGrupo.TabIndex = 12;
+            this.panSMGrupo.Visible = false;
+            // 
+            // btnSMAsignarDocente
+            // 
+            this.btnSMAsignarDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSMAsignarDocente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunAnimLogo.SetDecoration(this.btnSMAsignarDocente, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.btnSMAsignarDocente, BunifuAnimatorNS.DecorationType.None);
+            this.btnSMAsignarDocente.FlatAppearance.BorderSize = 0;
+            this.btnSMAsignarDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
+            this.btnSMAsignarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMAsignarDocente.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSMAsignarDocente.ForeColor = System.Drawing.Color.White;
+            this.btnSMAsignarDocente.Location = new System.Drawing.Point(3, 40);
+            this.btnSMAsignarDocente.Name = "btnSMAsignarDocente";
+            this.btnSMAsignarDocente.Size = new System.Drawing.Size(204, 30);
+            this.btnSMAsignarDocente.TabIndex = 13;
+            this.btnSMAsignarDocente.Text = "          ° Asignar docente";
+            this.btnSMAsignarDocente.UseVisualStyleBackColor = false;
+            // 
+            // btnSMCrearGrupo
+            // 
+            this.btnSMCrearGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSMCrearGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunAnimLogo.SetDecoration(this.btnSMCrearGrupo, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.btnSMCrearGrupo, BunifuAnimatorNS.DecorationType.None);
+            this.btnSMCrearGrupo.FlatAppearance.BorderSize = 0;
+            this.btnSMCrearGrupo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
+            this.btnSMCrearGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMCrearGrupo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSMCrearGrupo.ForeColor = System.Drawing.Color.White;
+            this.btnSMCrearGrupo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSMCrearGrupo.Location = new System.Drawing.Point(3, 3);
+            this.btnSMCrearGrupo.Name = "btnSMCrearGrupo";
+            this.btnSMCrearGrupo.Size = new System.Drawing.Size(204, 31);
+            this.btnSMCrearGrupo.TabIndex = 12;
+            this.btnSMCrearGrupo.Text = " ° Crear grupo";
+            this.btnSMCrearGrupo.UseVisualStyleBackColor = false;
             // 
             // bunAnimLogo
             // 
@@ -671,27 +693,6 @@
             animation1.TransparencyCoeff = 0F;
             this.bunAnimSlider.DefaultAnimation = animation1;
             // 
-            // btnCalendario
-            // 
-            this.btnCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
-            this.btnCalendario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunAnimLogo.SetDecoration(this.btnCalendario, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.btnCalendario, BunifuAnimatorNS.DecorationType.None);
-            this.btnCalendario.FlatAppearance.BorderSize = 0;
-            this.btnCalendario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
-            this.btnCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalendario.ForeColor = System.Drawing.Color.White;
-            this.btnCalendario.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendario.Image")));
-            this.btnCalendario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendario.Location = new System.Drawing.Point(22, 539);
-            this.btnCalendario.Name = "btnCalendario";
-            this.btnCalendario.Size = new System.Drawing.Size(177, 47);
-            this.btnCalendario.TabIndex = 12;
-            this.btnCalendario.Text = "             Calendario";
-            this.btnCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendario.UseVisualStyleBackColor = false;
-            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -714,10 +715,10 @@
             this.Load += new System.EventHandler(this.frmBase_Load);
             this.panMenuSlider.ResumeLayout(false);
             this.panSMServicio.ResumeLayout(false);
-            this.panSMGrupo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).EndInit();
             this.panSMPago.ResumeLayout(false);
+            this.panSMGrupo.ResumeLayout(false);
             this.panFooter.ResumeLayout(false);
             this.panFooter.PerformLayout();
             this.panel1.ResumeLayout(false);

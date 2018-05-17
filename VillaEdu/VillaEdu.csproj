@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -48,6 +48,8 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -57,6 +59,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +76,12 @@
     </Compile>
     <Compile Include="controles_usuario\ComplexDataGridView.Designer.cs">
       <DependentUpon>ComplexDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controles_usuario\cuCuotaMatricula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles_usuario\cuCuotaMatricula.Designer.cs">
+      <DependentUpon>cuCuotaMatricula.cs</DependentUpon>
     </Compile>
     <Compile Include="controles_usuario\cuDocente.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +112,12 @@
     </Compile>
     <Compile Include="forms\frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBoletaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBoletaMatricula.Designer.cs">
+      <DependentUpon>frmBoletaMatricula.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmDocente.cs">
       <SubType>Form</SubType>
@@ -163,6 +178,9 @@
     <EmbeddedResource Include="controles_usuario\ComplexDataGridView.resx">
       <DependentUpon>ComplexDataGridView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controles_usuario\cuCuotaMatricula.resx">
+      <DependentUpon>cuCuotaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controles_usuario\cuDocente.resx">
       <DependentUpon>cuDocente.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBoletaMatricula.resx">
+      <DependentUpon>frmBoletaMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
@@ -214,6 +235,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reportes\rptBoletaMatricula.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -230,7 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="icons\" />
-    <Folder Include="reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

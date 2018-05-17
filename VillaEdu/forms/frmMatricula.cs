@@ -758,10 +758,11 @@ namespace VillaEdu.forms
 
                 else
                 {
+                    descuento = 0;
                     montoFinal = Convert.ToInt16(numMontoTotal.Value);
                 }
 
-                cmd.Parameters.Add("@descuento", SqlDbType.Money).Value = numDescuento.Value;
+                cmd.Parameters.Add("@descuento", SqlDbType.Money).Value = descuento;
                 cmd.Parameters.Add("@montoFinal", SqlDbType.Money).Value = montoFinal;
                 cmd.Parameters.Add("@fechaInicio", SqlDbType.Date).Value = dateFechaInicioClases.Value;
                 cmd.Parameters.Add("@fechaFin", SqlDbType.Date).Value = dateFechaFinClases.Value;
@@ -815,6 +816,14 @@ namespace VillaEdu.forms
                     insertarCuotasMatricula(idMat, numCuota, listaFechas, listaCantidades);
 
                     // Generar el reporte "Boleta de la matricula al cliente"
+                    DialogResult boton;
+                    boton = MessageBox.Show("Desea generar boleta para el cliente", "SUCCESS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (boton == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        frmBoletaMatricula bol = new frmBoletaMatricula();
+                        bol.ShowDialog();
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
