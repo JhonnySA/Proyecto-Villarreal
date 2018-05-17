@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunMoverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panLineaTopDetalle = new System.Windows.Forms.Panel();
@@ -57,8 +57,6 @@
             this.btnSMAsignarDocente = new System.Windows.Forms.Button();
             this.btnSMCrearGrupo = new System.Windows.Forms.Button();
             this.bunAnimLogo = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.lblUsuario = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
@@ -67,18 +65,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panContenedor = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunAnimSlider = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panMenuSlider.SuspendLayout();
             this.panSMServicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).BeginInit();
             this.panSMPago.SuspendLayout();
             this.panSMGrupo.SuspendLayout();
-            this.panFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMiximixar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -111,6 +111,7 @@
             this.panMenuSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panMenuSlider.Controls.Add(this.btnCalendario);
             this.panMenuSlider.Controls.Add(this.btnReporte);
+            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.panMenuSlider.Controls.Add(this.btnPago);
             this.panMenuSlider.Controls.Add(this.btnUsuario);
             this.panMenuSlider.Controls.Add(this.btnServicio);
@@ -122,7 +123,6 @@
             this.panMenuSlider.Controls.Add(this.pbxLogoMenuSlider);
             this.panMenuSlider.Controls.Add(this.panSMPago);
             this.panMenuSlider.Controls.Add(this.panSMGrupo);
-            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.bunAnimSlider.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.panMenuSlider.Dock = System.Windows.Forms.DockStyle.Left;
@@ -456,7 +456,6 @@
             this.btnSMPagoCuotaMatricula.TabIndex = 12;
             this.btnSMPagoCuotaMatricula.Text = " ° Cuota matricula";
             this.btnSMPagoCuotaMatricula.UseVisualStyleBackColor = false;
-            this.btnSMPagoCuotaMatricula.Click += new System.EventHandler(this.btnSMPagoCuotaMatricula_Click);
             // 
             // panSMGrupo
             // 
@@ -512,52 +511,22 @@
             // 
             this.bunAnimLogo.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.bunAnimLogo.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 1;
-            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 2F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunAnimLogo.DefaultAnimation = animation2;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsuario.AutoSize = true;
-            this.bunAnimLogo.SetDecoration(this.lblUsuario, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.lblUsuario, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuario.Location = new System.Drawing.Point(923, 15);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(105, 16);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "USUARIO: xxxxxxx";
-            // 
-            // panFooter
-            // 
-            this.panFooter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panFooter.BackgroundImage")));
-            this.panFooter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panFooter.Controls.Add(this.lblUsuario);
-            this.bunAnimSlider.SetDecoration(this.panFooter, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimLogo.SetDecoration(this.panFooter, BunifuAnimatorNS.DecorationType.None);
-            this.panFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panFooter.GradientBottomLeft = System.Drawing.SystemColors.ControlDark;
-            this.panFooter.GradientBottomRight = System.Drawing.SystemColors.ControlDark;
-            this.panFooter.GradientTopLeft = System.Drawing.SystemColors.ControlDark;
-            this.panFooter.GradientTopRight = System.Drawing.SystemColors.ControlDark;
-            this.panFooter.Location = new System.Drawing.Point(240, 709);
-            this.panFooter.Name = "panFooter";
-            this.panFooter.Quality = 10;
-            this.panFooter.Size = new System.Drawing.Size(1040, 40);
-            this.panFooter.TabIndex = 4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunAnimLogo.DefaultAnimation = animation1;
             // 
             // panel1
             // 
@@ -669,38 +638,71 @@
             this.panContenedor.Location = new System.Drawing.Point(240, 50);
             this.panContenedor.Name = "panContenedor";
             this.panContenedor.Quality = 10;
-            this.panContenedor.Size = new System.Drawing.Size(1040, 659);
+            this.panContenedor.Size = new System.Drawing.Size(1040, 699);
             this.panContenedor.TabIndex = 7;
             // 
             // bunAnimSlider
             // 
             this.bunAnimSlider.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunAnimSlider.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunAnimSlider.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunAnimSlider.DefaultAnimation = animation2;
+            // 
+            // panFooter
+            // 
+            this.panFooter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panFooter.BackgroundImage")));
+            this.panFooter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panFooter.Controls.Add(this.bunifuCustomLabel1);
+            this.bunAnimSlider.SetDecoration(this.panFooter, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimLogo.SetDecoration(this.panFooter, BunifuAnimatorNS.DecorationType.None);
+            this.panFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panFooter.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panFooter.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panFooter.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panFooter.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panFooter.Location = new System.Drawing.Point(240, 703);
+            this.panFooter.Name = "panFooter";
+            this.panFooter.Quality = 10;
+            this.panFooter.Size = new System.Drawing.Size(1040, 46);
+            this.panFooter.TabIndex = 5;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunAnimLogo.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(923, 20);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(101, 15);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "USUARIO: xxxxxxx";
             // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 749);
+            this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panContenedor);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panMenuSlider);
             this.Controls.Add(this.panLineaTopDetalle);
             this.bunAnimLogo.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -719,13 +721,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).EndInit();
             this.panSMPago.ResumeLayout(false);
             this.panSMGrupo.ResumeLayout(false);
-            this.panFooter.ResumeLayout(false);
-            this.panFooter.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMiximixar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panFooter.ResumeLayout(false);
+            this.panFooter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -747,8 +749,6 @@
         private System.Windows.Forms.PictureBox pbxLogoMenuSlider;
         private BunifuAnimatorNS.BunifuTransition bunAnimLogo;
         private BunifuAnimatorNS.BunifuTransition bunAnimSlider;
-        private Bunifu.Framework.UI.BunifuGradientPanel panFooter;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblUsuario;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTitulo;
         private Bunifu.Framework.UI.BunifuImageButton btnCerrar;
@@ -767,5 +767,7 @@
         private System.Windows.Forms.Button btnSMPagoDocente;
         private System.Windows.Forms.Button btnSMPagoCuotaMatricula;
         private System.Windows.Forms.Button btnCalendario;
+        private Bunifu.Framework.UI.BunifuGradientPanel panFooter;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }

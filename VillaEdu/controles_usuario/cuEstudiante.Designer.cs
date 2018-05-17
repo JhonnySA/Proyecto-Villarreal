@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuEstudiante));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuEstudiante));
             this.gbxContenedor = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefrescarControlUsuario = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtFiltroEstudiante = new System.Windows.Forms.TextBox();
             this.gbxGrid = new System.Windows.Forms.GroupBox();
             this.gvEstudiante = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -46,25 +47,26 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblRecord = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnRefrescarControlUsuario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gbxContenedor.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).BeginInit();
             this.gbxGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstudiante)).BeginInit();
             this.gbxFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxContenedor
             // 
             this.gbxContenedor.Controls.Add(this.groupBox1);
             this.gbxContenedor.Controls.Add(this.gbxFiltro);
-            this.gbxContenedor.Location = new System.Drawing.Point(25, 26);
+            this.gbxContenedor.Location = new System.Drawing.Point(19, 45);
             this.gbxContenedor.Name = "gbxContenedor";
             this.gbxContenedor.Size = new System.Drawing.Size(1072, 504);
             this.gbxContenedor.TabIndex = 0;
             this.gbxContenedor.TabStop = false;
-            this.gbxContenedor.Text = "Listado de estudiantes:";
+            this.gbxContenedor.Text = "Listado de Estudiantes:";
             // 
             // groupBox1
             // 
@@ -77,6 +79,23 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "....";
+            // 
+            // btnRefrescarControlUsuario
+            // 
+            this.btnRefrescarControlUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefrescarControlUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefrescarControlUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefrescarControlUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescarControlUsuario.Image")));
+            this.btnRefrescarControlUsuario.ImageActive = null;
+            this.btnRefrescarControlUsuario.Location = new System.Drawing.Point(9, 16);
+            this.btnRefrescarControlUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefrescarControlUsuario.Name = "btnRefrescarControlUsuario";
+            this.btnRefrescarControlUsuario.Size = new System.Drawing.Size(28, 28);
+            this.btnRefrescarControlUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRefrescarControlUsuario.TabIndex = 7;
+            this.btnRefrescarControlUsuario.TabStop = false;
+            this.btnRefrescarControlUsuario.Zoom = 10;
+            this.btnRefrescarControlUsuario.Click += new System.EventHandler(this.btnRefrescarControlUsuario_Click);
             // 
             // txtFiltroEstudiante
             // 
@@ -179,11 +198,13 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(729, 574);
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(756, 574);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(145, 23);
             this.btnActualizar.TabIndex = 1;
@@ -194,11 +215,13 @@
             // btnDetalleDeuda
             // 
             this.btnDetalleDeuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleDeuda.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnDetalleDeuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnDetalleDeuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalleDeuda.FlatAppearance.BorderSize = 0;
             this.btnDetalleDeuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleDeuda.Location = new System.Drawing.Point(932, 574);
+            this.btnDetalleDeuda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleDeuda.ForeColor = System.Drawing.Color.White;
+            this.btnDetalleDeuda.Location = new System.Drawing.Point(959, 574);
             this.btnDetalleDeuda.Name = "btnDetalleDeuda";
             this.btnDetalleDeuda.Size = new System.Drawing.Size(145, 23);
             this.btnDetalleDeuda.TabIndex = 2;
@@ -209,11 +232,13 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(524, 574);
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(551, 574);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(145, 23);
             this.btnEliminar.TabIndex = 3;
@@ -224,11 +249,13 @@
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Location = new System.Drawing.Point(320, 574);
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(347, 574);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(145, 23);
             this.btnNuevo.TabIndex = 4;
@@ -239,34 +266,35 @@
             // lblRecord
             // 
             this.lblRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecord.Location = new System.Drawing.Point(577, 533);
+            this.lblRecord.Location = new System.Drawing.Point(604, 533);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(500, 16);
             this.lblRecord.TabIndex = 7;
             this.lblRecord.Text = " ";
             this.lblRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnRefrescarControlUsuario
+            // panel2
             // 
-            this.btnRefrescarControlUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefrescarControlUsuario.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnRefrescarControlUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefrescarControlUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescarControlUsuario.Image")));
-            this.btnRefrescarControlUsuario.ImageActive = null;
-            this.btnRefrescarControlUsuario.Location = new System.Drawing.Point(9, 16);
-            this.btnRefrescarControlUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRefrescarControlUsuario.Name = "btnRefrescarControlUsuario";
-            this.btnRefrescarControlUsuario.Size = new System.Drawing.Size(23, 25);
-            this.btnRefrescarControlUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRefrescarControlUsuario.TabIndex = 7;
-            this.btnRefrescarControlUsuario.TabStop = false;
-            this.btnRefrescarControlUsuario.Zoom = 10;
-            this.btnRefrescarControlUsuario.Click += new System.EventHandler(this.btnRefrescarControlUsuario_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panel2.Location = new System.Drawing.Point(1053, 611);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(97, 32);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panel1.Location = new System.Drawing.Point(0, 611);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(507, 32);
+            this.panel1.TabIndex = 10;
             // 
             // cuEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblRecord);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);
@@ -276,16 +304,16 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "cuEstudiante";
-            this.Size = new System.Drawing.Size(1123, 643);
+            this.Size = new System.Drawing.Size(1150, 700);
             this.Load += new System.EventHandler(this.cuEstudiante_Load);
             this.gbxContenedor.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).EndInit();
             this.gbxGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvEstudiante)).EndInit();
             this.gbxFiltro.ResumeLayout(false);
             this.gbxFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +336,7 @@
         private System.Windows.Forms.CheckBox chxMatriculado;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMatriculadosActuales;
         private Bunifu.Framework.UI.BunifuImageButton btnRefrescarControlUsuario;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
