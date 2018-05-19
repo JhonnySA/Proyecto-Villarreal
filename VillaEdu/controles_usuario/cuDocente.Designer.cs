@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuDocente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -42,13 +42,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.gvDocente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chxDocenteActivo = new System.Windows.Forms.CheckBox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRecord = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnNuevoDocente = new System.Windows.Forms.Button();
             this.btnEliminarDocente = new System.Windows.Forms.Button();
             this.btnAsignarDocente = new System.Windows.Forms.Button();
             this.btnActualizarDocente = new System.Windows.Forms.Button();
-            this.chxDocenteActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).BeginInit();
@@ -188,19 +188,19 @@
             // 
             // gvDocente
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvDocente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDocente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDocente.DoubleBuffered = true;
@@ -227,6 +227,17 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones de filtro:";
+            // 
+            // chxDocenteActivo
+            // 
+            this.chxDocenteActivo.AutoSize = true;
+            this.chxDocenteActivo.Location = new System.Drawing.Point(43, 76);
+            this.chxDocenteActivo.Name = "chxDocenteActivo";
+            this.chxDocenteActivo.Size = new System.Drawing.Size(120, 20);
+            this.chxDocenteActivo.TabIndex = 4;
+            this.chxDocenteActivo.Text = "Docentes Activos";
+            this.chxDocenteActivo.UseVisualStyleBackColor = true;
+            this.chxDocenteActivo.CheckedChanged += new System.EventHandler(this.chxDocenteActivo_CheckedChanged);
             // 
             // bunifuCustomLabel3
             // 
@@ -275,6 +286,7 @@
             this.btnEliminarDocente.TabIndex = 7;
             this.btnEliminarDocente.Text = "Eliminar";
             this.btnEliminarDocente.UseVisualStyleBackColor = false;
+            this.btnEliminarDocente.Click += new System.EventHandler(this.btnEliminarDocente_Click);
             // 
             // btnAsignarDocente
             // 
@@ -304,17 +316,6 @@
             this.btnActualizarDocente.Text = "Actualizar";
             this.btnActualizarDocente.UseVisualStyleBackColor = false;
             this.btnActualizarDocente.Click += new System.EventHandler(this.btnActualizarDocente_Click);
-            // 
-            // chxDocenteActivo
-            // 
-            this.chxDocenteActivo.AutoSize = true;
-            this.chxDocenteActivo.Location = new System.Drawing.Point(43, 76);
-            this.chxDocenteActivo.Name = "chxDocenteActivo";
-            this.chxDocenteActivo.Size = new System.Drawing.Size(120, 20);
-            this.chxDocenteActivo.TabIndex = 4;
-            this.chxDocenteActivo.Text = "Docentes Activos";
-            this.chxDocenteActivo.UseVisualStyleBackColor = true;
-            this.chxDocenteActivo.CheckedChanged += new System.EventHandler(this.chxDocenteActivo_CheckedChanged);
             // 
             // cuDocente
             // 

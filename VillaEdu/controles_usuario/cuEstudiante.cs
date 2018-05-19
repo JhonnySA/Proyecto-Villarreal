@@ -144,7 +144,7 @@ namespace VillaEdu.controles_usuario
                 // Pasar el Valor de la accion 0 - Creacion y 1 - Actualizacion
                 // Pasar como parametro el id del estudiante seleccionado 
 
-                forms.frmEstudiante est = new forms.frmEstudiante(0);
+                forms.frmEstudiante est = new forms.frmEstudiante(0);                
                 est.ShowDialog();
 
                 consulta = "select e.codEstudiante, e.apPaterno, e.apMaterno, e.nombre, sexo, CONVERT(varchar, day(fechaNacimiento)) + ' de ' + DATENAME(month, fechaNacimiento) as cumpleaños, a.apPaterno + ' ' + a.apMaterno + ' ; ' + a.nombre as apo, a.telefono, a.celular, a.direccion From Estudiante as e inner join Apoderado as a on e.codApoderado = a.codApoderado";

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panLineaDetalle = new System.Windows.Forms.Panel();
             this.panTop = new System.Windows.Forms.Panel();
@@ -69,6 +69,7 @@
             this.PageContratosAnteriores = new MetroFramework.Controls.MetroTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvContratosAnterioresDocente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.eprCamposDocente = new System.Windows.Forms.ErrorProvider(this.components);
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.tabDocente.SuspendLayout();
@@ -77,6 +78,7 @@
             this.PageContratosAnteriores.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvContratosAnterioresDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposDocente)).BeginInit();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -86,6 +88,7 @@
             // 
             // panLineaDetalle
             // 
+            this.panLineaDetalle.BackColor = System.Drawing.Color.SteelBlue;
             this.panLineaDetalle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panLineaDetalle.Location = new System.Drawing.Point(0, 0);
             this.panLineaDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -102,13 +105,13 @@
             this.panTop.Location = new System.Drawing.Point(0, 6);
             this.panTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(955, 49);
+            this.panTop.Size = new System.Drawing.Size(955, 40);
             this.panTop.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 18);
+            this.label1.Location = new System.Drawing.Point(518, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 16);
             this.label1.TabIndex = 5;
@@ -220,16 +223,16 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(23, 25);
+            this.groupBox1.Location = new System.Drawing.Point(17, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(871, 263);
+            this.groupBox1.Size = new System.Drawing.Size(888, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // lblIDDocente
             // 
             this.lblIDDocente.ForeColor = System.Drawing.Color.Blue;
-            this.lblIDDocente.Location = new System.Drawing.Point(195, 23);
+            this.lblIDDocente.Location = new System.Drawing.Point(159, 23);
             this.lblIDDocente.Name = "lblIDDocente";
             this.lblIDDocente.Size = new System.Drawing.Size(72, 16);
             this.lblIDDocente.TabIndex = 39;
@@ -237,7 +240,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(41, 23);
+            this.label12.Location = new System.Drawing.Point(22, 23);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 16);
             this.label12.TabIndex = 38;
@@ -245,7 +248,7 @@
             // 
             // txtGradoAcademico
             // 
-            this.txtGradoAcademico.Location = new System.Drawing.Point(628, 213);
+            this.txtGradoAcademico.Location = new System.Drawing.Point(603, 213);
             this.txtGradoAcademico.Name = "txtGradoAcademico";
             this.txtGradoAcademico.Size = new System.Drawing.Size(211, 21);
             this.txtGradoAcademico.TabIndex = 37;
@@ -253,7 +256,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(513, 216);
+            this.label11.Location = new System.Drawing.Point(479, 216);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 16);
             this.label11.TabIndex = 36;
@@ -262,7 +265,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(513, 181);
+            this.label10.Location = new System.Drawing.Point(479, 181);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 16);
             this.label10.TabIndex = 35;
@@ -271,7 +274,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(513, 143);
+            this.label9.Location = new System.Drawing.Point(479, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 16);
             this.label9.TabIndex = 34;
@@ -280,7 +283,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(513, 105);
+            this.label8.Location = new System.Drawing.Point(479, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 16);
             this.label8.TabIndex = 33;
@@ -289,7 +292,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(513, 67);
+            this.label6.Location = new System.Drawing.Point(479, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 32;
@@ -297,23 +300,25 @@
             // 
             // txtCelularDocente
             // 
-            this.txtCelularDocente.Location = new System.Drawing.Point(628, 102);
-            this.txtCelularDocente.Mask = "999999999";
+            this.txtCelularDocente.Location = new System.Drawing.Point(603, 102);
+            this.txtCelularDocente.Mask = "999-999-999";
             this.txtCelularDocente.Name = "txtCelularDocente";
-            this.txtCelularDocente.PromptChar = '*';
+            this.txtCelularDocente.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCelularDocente.Size = new System.Drawing.Size(211, 21);
             this.txtCelularDocente.TabIndex = 31;
+            this.txtCelularDocente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCelularDocente.Validating += new System.ComponentModel.CancelEventHandler(this.txtCelularDocente_Validating);
             // 
             // txtDireccionDocente
             // 
-            this.txtDireccionDocente.Location = new System.Drawing.Point(628, 140);
+            this.txtDireccionDocente.Location = new System.Drawing.Point(603, 140);
             this.txtDireccionDocente.Name = "txtDireccionDocente";
             this.txtDireccionDocente.Size = new System.Drawing.Size(211, 21);
             this.txtDireccionDocente.TabIndex = 30;
             // 
             // txtProfesionDocente
             // 
-            this.txtProfesionDocente.Location = new System.Drawing.Point(628, 178);
+            this.txtProfesionDocente.Location = new System.Drawing.Point(603, 178);
             this.txtProfesionDocente.Name = "txtProfesionDocente";
             this.txtProfesionDocente.Size = new System.Drawing.Size(211, 21);
             this.txtProfesionDocente.TabIndex = 29;
@@ -321,7 +326,7 @@
             // txtTelefonoDocente
             // 
             this.txtTelefonoDocente.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTelefonoDocente.Location = new System.Drawing.Point(628, 64);
+            this.txtTelefonoDocente.Location = new System.Drawing.Point(603, 64);
             this.txtTelefonoDocente.Name = "txtTelefonoDocente";
             this.txtTelefonoDocente.Size = new System.Drawing.Size(211, 21);
             this.txtTelefonoDocente.TabIndex = 28;
@@ -329,7 +334,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 67);
+            this.label7.Location = new System.Drawing.Point(22, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 16);
             this.label7.TabIndex = 27;
@@ -337,7 +342,7 @@
             // 
             // txtDNIDocente
             // 
-            this.txtDNIDocente.Location = new System.Drawing.Point(198, 64);
+            this.txtDNIDocente.Location = new System.Drawing.Point(162, 64);
             this.txtDNIDocente.Mask = "99999999";
             this.txtDNIDocente.Name = "txtDNIDocente";
             this.txtDNIDocente.PromptChar = '*';
@@ -348,7 +353,7 @@
             // rbtnFemeninoEst
             // 
             this.rbtnFemeninoEst.AutoSize = true;
-            this.rbtnFemeninoEst.Location = new System.Drawing.Point(331, 216);
+            this.rbtnFemeninoEst.Location = new System.Drawing.Point(295, 214);
             this.rbtnFemeninoEst.Name = "rbtnFemeninoEst";
             this.rbtnFemeninoEst.Size = new System.Drawing.Size(78, 20);
             this.rbtnFemeninoEst.TabIndex = 16;
@@ -360,7 +365,7 @@
             // 
             this.rbtnMasculinoEst.AutoSize = true;
             this.rbtnMasculinoEst.Checked = true;
-            this.rbtnMasculinoEst.Location = new System.Drawing.Point(198, 216);
+            this.rbtnMasculinoEst.Location = new System.Drawing.Point(162, 216);
             this.rbtnMasculinoEst.Name = "rbtnMasculinoEst";
             this.rbtnMasculinoEst.Size = new System.Drawing.Size(81, 20);
             this.rbtnMasculinoEst.TabIndex = 15;
@@ -370,29 +375,32 @@
             // 
             // txtNombreDocente
             // 
-            this.txtNombreDocente.Location = new System.Drawing.Point(198, 178);
+            this.txtNombreDocente.Location = new System.Drawing.Point(162, 178);
             this.txtNombreDocente.Name = "txtNombreDocente";
             this.txtNombreDocente.Size = new System.Drawing.Size(211, 21);
             this.txtNombreDocente.TabIndex = 7;
+            this.txtNombreDocente.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreDocente_Validating);
             // 
             // txtMaternoDocente
             // 
-            this.txtMaternoDocente.Location = new System.Drawing.Point(198, 140);
+            this.txtMaternoDocente.Location = new System.Drawing.Point(162, 140);
             this.txtMaternoDocente.Name = "txtMaternoDocente";
             this.txtMaternoDocente.Size = new System.Drawing.Size(211, 21);
             this.txtMaternoDocente.TabIndex = 6;
+            this.txtMaternoDocente.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaternoDocente_Validating);
             // 
             // txtPaternoDocente
             // 
-            this.txtPaternoDocente.Location = new System.Drawing.Point(198, 102);
+            this.txtPaternoDocente.Location = new System.Drawing.Point(162, 102);
             this.txtPaternoDocente.Name = "txtPaternoDocente";
             this.txtPaternoDocente.Size = new System.Drawing.Size(211, 21);
             this.txtPaternoDocente.TabIndex = 5;
+            this.txtPaternoDocente.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaternoDocente_Validating);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 216);
+            this.label5.Location = new System.Drawing.Point(22, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 16);
             this.label5.TabIndex = 3;
@@ -401,7 +409,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 181);
+            this.label4.Location = new System.Drawing.Point(22, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 2;
@@ -410,7 +418,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 143);
+            this.label3.Location = new System.Drawing.Point(22, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 16);
             this.label3.TabIndex = 1;
@@ -419,7 +427,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 105);
+            this.label2.Location = new System.Drawing.Point(22, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 16);
             this.label2.TabIndex = 0;
@@ -468,19 +476,19 @@
             // 
             // gvContratosAnterioresDocente
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvContratosAnterioresDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvContratosAnterioresDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gvContratosAnterioresDocente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvContratosAnterioresDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvContratosAnterioresDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvContratosAnterioresDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvContratosAnterioresDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gvContratosAnterioresDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvContratosAnterioresDocente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvContratosAnterioresDocente.DoubleBuffered = true;
@@ -492,6 +500,11 @@
             this.gvContratosAnterioresDocente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gvContratosAnterioresDocente.Size = new System.Drawing.Size(865, 280);
             this.gvContratosAnterioresDocente.TabIndex = 0;
+            // 
+            // eprCamposDocente
+            // 
+            this.eprCamposDocente.ContainerControl = this;
+            this.eprCamposDocente.Icon = ((System.Drawing.Icon)(resources.GetObject("eprCamposDocente.Icon")));
             // 
             // frmDocente
             // 
@@ -518,6 +531,7 @@
             this.PageContratosAnteriores.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvContratosAnterioresDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposDocente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,5 +575,6 @@
         private System.Windows.Forms.TextBox txtGradoAcademico;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblIDDocente;
+        private System.Windows.Forms.ErrorProvider eprCamposDocente;
     }
 }

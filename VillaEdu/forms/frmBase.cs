@@ -238,10 +238,10 @@ namespace VillaEdu.forms
             abrirUC(new controles_usuario.cuMatricula());
         }
 
-        /// Sub-Menus Pagos        
+        /// Sub-Menus Pagos
         private void btnSMPagoCuotaMatricula_Click(object sender, EventArgs e)
         {
-            abrirUC(new controles_usuario.cuCuotaMatricula());                        
-        }
+            abrirUC(new controles_usuario.cuCuotaMatricula());
+        }        
     }
 }

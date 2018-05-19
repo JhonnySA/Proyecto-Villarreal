@@ -23,6 +23,7 @@ namespace VillaEdu.forms
         SqlConnection conex = new SqlConnection(ConfigurationManager.ConnectionStrings["conex"].ConnectionString);
 
         public int cod { get; set; }
+        public int devolucion { get; set; }
         int codApo;
 
         // valor 0 - creacion
@@ -186,7 +187,16 @@ namespace VillaEdu.forms
 
         private void btnRestaurarEstudiante_Click(object sender, EventArgs e)
         {
-            cargarDatosEstudiante();
+            if (cod != 0)
+            {
+                DialogResult boton;
+
+                boton = MessageBox.Show("Esta seguro que desea resetear la informacion del estudiante ya existente de la Base de Datos?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (boton == System.Windows.Forms.DialogResult.Yes)
+                {
+                    cargarDatosEstudiante();
+                }
+            }
         }
 
         private void btnActualizarEstudiante_Click(object sender, EventArgs e)
@@ -201,36 +211,44 @@ namespace VillaEdu.forms
                 if (boton == System.Windows.Forms.DialogResult.Yes)
                 {
                     // UPDATE Estudiante
-                    if (txtPaternoEstudiante.Text != "" && txtMaternoEstudiante.Text != "" && txtNombrestudiante.Text != "")
+                    if (validarCamposObligatoriosEstudiante())
                     {
-                        SqlCommand cmd = new SqlCommand("Update Estudiante set apPaterno = @apPaterno, apMaterno = @apMaterno, nombre = @nombre, sexo = @sexo, fechaNacimiento = @fNac where codEstudiante = @codEst", conex);
-
-                        cmd.Parameters.Add("@codEst", SqlDbType.Int).Value = cod;
-                        cmd.Parameters.Add("@apPaterno", SqlDbType.VarChar, 50).Value = (info.ToTitleCase(txtPaternoEstudiante.Text.ToLower()));
-                        cmd.Parameters.Add("@apMaterno", SqlDbType.VarChar, 50).Value = info.ToTitleCase(txtMaternoEstudiante.Text.ToLower());
-                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100).Value = info.ToTitleCase(txtNombrestudiante.Text.ToLower());
-
-                        if (rbtnMasculinoEst.Checked)
+                        if (txtPaternoEstudiante.Text != "" && txtMaternoEstudiante.Text != "" && txtNombrestudiante.Text != "")
                         {
-                            sexo = "M";
+                            SqlCommand cmd = new SqlCommand("Update Estudiante set apPaterno = @apPaterno, apMaterno = @apMaterno, nombre = @nombre, sexo = @sexo, fechaNacimiento = @fNac where codEstudiante = @codEst", conex);
+
+                            cmd.Parameters.Add("@codEst", SqlDbType.Int).Value = cod;
+                            cmd.Parameters.Add("@apPaterno", SqlDbType.VarChar, 50).Value = (info.ToTitleCase(txtPaternoEstudiante.Text.ToLower()));
+                            cmd.Parameters.Add("@apMaterno", SqlDbType.VarChar, 50).Value = info.ToTitleCase(txtMaternoEstudiante.Text.ToLower());
+                            cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100).Value = info.ToTitleCase(txtNombrestudiante.Text.ToLower());
+
+                            if (rbtnMasculinoEst.Checked)
+                            {
+                                sexo = "M";
+                            }
+                            else
+                            {
+                                sexo = "F";
+                            }
+
+                            cmd.Parameters.Add("@sexo", SqlDbType.Char, 1).Value = sexo;
+                            cmd.Parameters.Add("@fNac", SqlDbType.Date).Value = dateFechaNac.Value;
+
+                            conex.Open();
+
+                            int resp = cmd.ExecuteNonQuery();
+                            conex.Close();
+                            if (resp == 1)
+                                controles_usuario.CustomDialog.ShowDialog("ACTUALIZACION DE INFORMACION DE ESTUDIANTE EXITOSA !!!");
+                            else
+                                MessageBox.Show("ERROR AL INTENTAR ACTULIZAR INFORMACION DE ESTUDIANTE!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.Close();
                         }
-                        else
-                        {
-                            sexo = "F";
-                        }
+                    }
 
-                        cmd.Parameters.Add("@sexo", SqlDbType.Char, 1).Value = sexo;
-                        cmd.Parameters.Add("@fNac", SqlDbType.Date).Value = dateFechaNac.Value;
-
-                        conex.Open();
-
-                        int resp = cmd.ExecuteNonQuery();
-                        conex.Close();
-                        if (resp == 1)
-                            controles_usuario.CustomDialog.ShowDialog("ACTUALIZACION DE INFORMACION DE ESTUDIANTE EXITOSA !!!");
-                        else
-                            MessageBox.Show("ERROR AL INTENTAR ACTULIZAR INFORMACION DE ESTUDIANTE!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Close();
+                    else
+                    {
+                        MessageBox.Show("Campos del Estudiante incompletos...!", "Adventencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -319,7 +337,7 @@ namespace VillaEdu.forms
             txtCorreoApoderado.Text = "";
             txtDireccionApoderado.Text = "";
 
-            txtDNIApoderado.Focus();
+            txtPaternoApoderado.Focus();
         }
 
         private void btnCrearEstudiante_Click(object sender, EventArgs e)
@@ -328,22 +346,22 @@ namespace VillaEdu.forms
             if (lblIDApoderado.Text != "")
             {
                 // Preguntar si todos los campos del estudiante estan completos para insertar con el cod del Apo                
-                if (camposEstudianteCompletos())
+                if (validarCamposObligatoriosEstudiante())
                 {
                     // Insertar al estudiante con el cod del Apo
                     int apoderado = Convert.ToInt16(lblIDApoderado.Text);
                     insertarEstudiante(txtPaternoEstudiante.Text, txtMaternoEstudiante.Text, txtNombrestudiante.Text, apoderado);
                 }
+
                 else
                 {
                     MessageBox.Show("Campos del estudiante incompletos ...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPaternoEstudiante.Focus();
                 }
             }
             else
             {
                 // 1. Insertar al apoderado
-                if (camposApoderadoCompletos() && camposEstudianteCompletos())
+                if (validarCamposObligatoriosApoderado() && validarCamposObligatoriosEstudiante())
                 {
                     int apoderado = insertarApoderado();
 
@@ -351,9 +369,10 @@ namespace VillaEdu.forms
                     // Preguntar si los campos del estudiante son completos
                     insertarEstudiante(txtPaternoEstudiante.Text, txtMaternoEstudiante.Text, txtNombrestudiante.Text, apoderado);
                 }
-                else
+                else if (!validarCamposObligatoriosApoderado())
                 {
-                    MessageBox.Show("Faltan campos por llenar ...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Faltan campos del Apoderado por llenar ...", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tabEstudiante.SelectedIndex = 1;
                 }
             }
         }
@@ -369,7 +388,6 @@ namespace VillaEdu.forms
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO Estudiante(apPaterno, apMaterno, nombre, sexo, codApoderado, fechaNacimiento) VALUES(@apPaterno, @apMaterno, @nombre, @sexo, @codApo, @fNac); SELECT SCOPE_IDENTITY()", conex);
 
-                //cmd.Parameters.Add("@codEst", SqlDbType.Int).Value = cod;
                 cmd.Parameters.Add("@apPaterno", SqlDbType.VarChar, 50).Value = (info.ToTitleCase(paterno.ToLower()));
                 cmd.Parameters.Add("@apMaterno", SqlDbType.VarChar, 50).Value = info.ToTitleCase(materno.ToLower());
                 cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100).Value = info.ToTitleCase(nombre.ToLower());
@@ -394,17 +412,23 @@ namespace VillaEdu.forms
                 nombreEstudiante = paterno + " " + materno + ", " + nombre;
                 nombreApoderado = traerNombreApoderado(apoderado);
 
-                // int resp = cmd.ExecuteNonQuery();
                 conex.Close();
                 if (Convert.ToInt16(idEstudiante) > 0)
+                {
                     controles_usuario.CustomDialog.ShowDialog("CREACION DE ESTUDIANTE EXITOSA !!!");
-                pasado(idEstudiante, nombreEstudiante, nombreApoderado);
-                this.Close();
+
+                    // Pasa los datos del nuevo estudiante recien creado (SIRVE PARA LAS MATRICULAS) no para la parte del modulo de estudiantes       
+                    if (devolucion == 1)
+                    {
+                        pasado(idEstudiante, nombreEstudiante, nombreApoderado);
+                    }                    
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error en la creacion del nuevo Estudiante ... !" + "\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error en la creacion del nuevo Estudiante xD... !" + "\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -414,6 +438,14 @@ namespace VillaEdu.forms
 
             try
             {
+                string[] numeros = txtCelularApoderado.Text.Split(' ');
+                string numero = "";
+
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    numero += numeros[i];
+                }
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO Apoderado(apPaterno, apMaterno, nombre, celular, telefono, correo, dni, direccion) VALUES(@apPaterno, @apMaterno, @nombre, @celular, @telefono, @correo, @dni, @direccion); 	SELECT SCOPE_IDENTITY()", conex);
 
                 //cmd.Parameters.Add("@codEst", SqlDbType.Int).Value = cod;
@@ -421,7 +453,7 @@ namespace VillaEdu.forms
                 cmd.Parameters.Add("@apMaterno", SqlDbType.VarChar, 50).Value = info.ToTitleCase(txtMaternoApoderado.Text.ToLower());
                 cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100).Value = info.ToTitleCase(txtNombreApoderado.Text.ToLower());
 
-                cmd.Parameters.Add("@celular", SqlDbType.VarChar, 9).Value = txtCelularApoderado.Text;
+                cmd.Parameters.Add("@celular", SqlDbType.VarChar, 9).Value = numero;
                 cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 12).Value = txtTelefonoApoderado.Text;
                 cmd.Parameters.Add("@correo", SqlDbType.VarChar, 100).Value = txtCorreoApoderado.Text;
                 cmd.Parameters.Add("@dni", SqlDbType.Char, 8).Value = txtDNIApoderado.Text;
@@ -430,7 +462,7 @@ namespace VillaEdu.forms
                 conex.Open();
 
                 id = Convert.ToInt16(cmd.ExecuteScalar());
-                conex.Close();                
+                conex.Close();
                 this.Close();
             }
             catch (Exception ex)
@@ -441,41 +473,139 @@ namespace VillaEdu.forms
             return id;
         }
 
-        private bool camposEstudianteCompletos()
+        /// Validacion de campos obligatorios para ingresar un apoderado Error Provider
+        /// True si estan completos todos los campos
+        /// False si algun campo obligatorio no esta completo
+        private bool validarCamposObligatoriosApoderado()
         {
-            bool valor = false;
+            bool valor = true;
+            int num;
 
-            if (txtPaternoEstudiante.Text != "" && txtMaternoApoderado.Text != "" && txtNombrestudiante.Text != "")
+            /// Dado que el campo numero posee una mascara (999-900-123)
+            /// Separamos este campo por el '-'
+            /// Luego lo volvemos a unir            
+            string[] numeros = txtCelularApoderado.Text.Split(' ');
+            string numero = "";
+
+            for (int i = 0; i < numeros.Length; i++)
             {
-                valor = true;
+                numero += numeros[i];
             }
 
+            try
+            {
+                if (int.TryParse(txtPaternoApoderado.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtPaternoApoderado, "El apellido paterno no debe ser un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtPaternoApoderado.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtPaternoApoderado, "El campo no debe estar vacio, Ingrese un apellido paterno !!!");
+                    valor = false;
+                }
+
+                if (int.TryParse(txtMaternoApoderado.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtMaternoApoderado, "El apellido materno no debe ser un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtMaternoApoderado.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtMaternoApoderado, "El campo no debe estar vacio, Ingrese un apellido materno !!!");
+                    valor = false;
+                }
+
+                if (int.TryParse(txtNombreApoderado.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtNombreApoderado, "El nombre no debe ser un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtNombreApoderado.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtNombreApoderado, "El campo no debe estar vacio, Ingrese un nombre !!!");
+                    valor = false;
+                }
+
+                if (int.TryParse(txtDireccionApoderado.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtDireccionApoderado, "El nombre no debe ser solo un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtDireccionApoderado.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtDireccionApoderado, "El campo no debe estar vacio, Ingrese una direccion !!!");
+                    valor = false;
+                }
+
+                if (numero.Length < 9)
+                {
+                    eprCamposObligatorios.SetError(txtCelularApoderado, "El campo celular debe contener 9 digitos !!!");
+                    valor = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return valor;
         }
 
-        private bool camposApoderadoCompletos()
+        /// Validacion de campos obligatorios para ingresar un estudiante Error Provider
+        /// True si estan completos todos los campos
+        /// False si algun campo obligatorio no esta completo
+        private bool validarCamposObligatoriosEstudiante()
         {
-            bool valor = false;
+            bool valor = true;
+            int num;
 
-            if (txtPaternoApoderado.Text != "" && txtMaternoApoderado.Text != "" && txtNombreApoderado.Text != "" && txtCelularApoderado.Text != "" && txtDireccionApoderado.Text != "")
+            try
             {
-                valor = true;
-            }
+                if (int.TryParse(txtPaternoEstudiante.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtPaternoEstudiante, "El apellido paterno no debe ser un numero !!!");
+                    valor = false;
+                }
 
+                else if (txtPaternoEstudiante.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtPaternoEstudiante, "El campo no debe estar vacio, Ingrese un apellido paterno !!!");
+                    valor = false;
+                }
+
+                if (int.TryParse(txtMaternoEstudiante.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtMaternoEstudiante, "El apellido materno no debe ser un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtMaternoEstudiante.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtMaternoEstudiante, "El campo no debe estar vacio, Ingrese un apellido materno !!!");
+                    valor = false;
+                }
+
+                if (int.TryParse(txtNombrestudiante.Text, out num))
+                {
+                    eprCamposObligatorios.SetError(txtNombrestudiante, "El nombre no debe ser un numero !!!");
+                    valor = false;
+                }
+
+                else if (txtNombrestudiante.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtNombrestudiante, "El campo no debe estar vacio, Ingrese un nombre !!!");
+                    valor = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return valor;
-        }
-
-        // Validar que cuando se ponga el cursor sobre la mask empieze a escribir desde el primer caracter
-        /// txtDniApoderado
-        /// txtCelularApoderado
-        private void txtDNIApoderado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((txtDNIApoderado.Text.Trim()).Length == 0)
-            {
-                txtDNIApoderado.Focus();
-                //SendKeys.Send("{HOME}");
-                txtDNIApoderado.Text = e.KeyChar.ToString();
-            }
         }
 
         private void btnActualizarApoderado_Click(object sender, EventArgs e)
@@ -487,16 +617,24 @@ namespace VillaEdu.forms
                 boton = MessageBox.Show("Esta seguro que desea actualizar la informacion del apoderado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (boton == System.Windows.Forms.DialogResult.Yes)
                 {
-                    // UPDATE Estudiante
-                    if (camposApoderadoCompletos())
+                    // UPDATE Apoderado
+                    if (validarCamposObligatoriosApoderado())
                     {
+                        string[] numeros = txtCelularApoderado.Text.Split(' ');
+                        string numero = "";
+
+                        for (int i = 0; i < numeros.Length; i++)
+                        {
+                            numero += numeros[i];
+                        }
+
                         SqlCommand cmd = new SqlCommand("Update Apoderado set apPaterno = @apPaterno, apMaterno = @apMaterno, nombre = @nombre, celular = @celular, telefono = @telefono, correo = @correo, dni = @dni, direccion = @direccion where codApoderado = @codApo", conex);
 
                         cmd.Parameters.Add("@codApo", SqlDbType.Int).Value = codApo;
                         cmd.Parameters.Add("@apPaterno", SqlDbType.VarChar, 50).Value = (info.ToTitleCase(txtPaternoApoderado.Text.ToLower()));
                         cmd.Parameters.Add("@apMaterno", SqlDbType.VarChar, 50).Value = info.ToTitleCase(txtMaternoApoderado.Text.ToLower());
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100).Value = info.ToTitleCase(txtNombreApoderado.Text.ToLower());
-                        cmd.Parameters.Add("@celular", SqlDbType.Char, 9).Value = txtCelularApoderado.Text;
+                        cmd.Parameters.Add("@celular", SqlDbType.Char, 9).Value = numero;
                         cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 9).Value = txtTelefonoApoderado.Text;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar, 100).Value = txtCorreoApoderado.Text;
                         cmd.Parameters.Add("@dni", SqlDbType.Char, 8).Value = txtDNIApoderado.Text;
@@ -514,8 +652,7 @@ namespace VillaEdu.forms
                     }
                     else
                     {
-                        MessageBox.Show("Campos del apoderado incompletos...!", "Adventencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        señalarCamposObligatorios();
+                        MessageBox.Show("Campos del Apoderado incompletos...!", "Adventencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -525,48 +662,181 @@ namespace VillaEdu.forms
             }
         }
 
-        private void señalarCamposObligatorios()
-        {
-            if (txtPaternoApoderado.Text == "")
-            {
-                txtPaternoApoderado.BackColor = Color.FromArgb(255, 192, 192);
-            }
-            else if (txtPaternoApoderado.Text != "")
-            {
-                txtPaternoApoderado.BackColor = SystemColors.Control;
-            }
-            if (txtMaternoApoderado.Text == "")
-            {
-                txtMaternoApoderado.BackColor = Color.FromArgb(255, 192, 192);
-            }
-            else if (txtMaternoApoderado.Text != "")
-            {
-                txtMaternoApoderado.BackColor = SystemColors.Control;
-            }
-            if (txtNombreApoderado.Text == "")
-            {
-                txtNombreApoderado.BackColor = Color.FromArgb(255, 192, 192);
-            }
-            else if (txtNombreApoderado.Text != "")
-            {
-                txtNombreApoderado.BackColor = SystemColors.Control;
-            }
-            if (txtCelularApoderado.Text == "")
-            {
-                txtCelularApoderado.BackColor = Color.FromArgb(255, 192, 192);
-            }
-            else if (txtCelularApoderado.Text != "")
-            {
-                txtCelularApoderado.BackColor = SystemColors.Control;
-            }
-        }
-
+        /// Preguntar si desea resetear los datos ya existentes
         private void btnRestaurarApoderado_Click(object sender, EventArgs e)
         {
             if (cod != 0)
             {
-                // Restaurar los datos del apoderado si se modifico algun campo sin haberlo guardado antes
-                cargarDatosApoderado(codApo);
+                DialogResult boton;
+
+                boton = MessageBox.Show("Esta seguro que desea resetear la informacion del apoderado ya existente de la Base de Datos?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (boton == System.Windows.Forms.DialogResult.Yes)
+                {
+                    cargarDatosApoderado(codApo);
+                }
+            }
+        }
+
+        /// Validaciones icono de error campos obligatorios para los campos del apoderado        
+        private void txtPaternoApoderado_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtPaternoApoderado.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtPaternoApoderado, "El apellido paterno no debe ser un numero !!!");            
+            }
+
+            else if (txtPaternoApoderado.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtPaternoApoderado, "El campo no debe estar vacio, Ingrese un apellido paterno !!!");            
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtPaternoApoderado, "");
+            }
+        }
+
+        private void txtMaternoApoderado_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtMaternoApoderado.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtMaternoApoderado, "El apellido materno no debe ser un numero !!!");            
+            }
+
+            else if (txtMaternoApoderado.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtMaternoApoderado, "El campo no debe estar vacio, Ingrese un apellido materno !!!");                
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtMaternoApoderado, "");
+            }
+        }
+
+        private void txtNombreApoderado_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtNombreApoderado.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtNombreApoderado, "El nombre no debe ser un numero !!!");            
+            }
+
+            else if (txtNombreApoderado.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtNombreApoderado, "El campo no debe estar vacio, Ingrese un nombre !!!");                
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtNombreApoderado, "");
+            }
+        }
+
+        private void txtCelularApoderado_Validating(object sender, CancelEventArgs e)
+        {
+            string[] numeros = txtCelularApoderado.Text.Split(' ');
+            string numero = "";
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                numero += numeros[i];
+            }
+
+            if (numero.Length < 9)
+            {
+                eprCamposObligatorios.SetError(txtCelularApoderado, "El campo celular debe contener 9 digitos !!!");
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtCelularApoderado, "");
+            }            
+        }
+
+        private void txtDireccionApoderado_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtDireccionApoderado.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtDireccionApoderado, "El nombre no debe ser solo un numero !!!");             
+            }
+
+            else if (txtDireccionApoderado.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtDireccionApoderado, "El campo no debe estar vacio, Ingrese una direccion !!!");
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtDireccionApoderado, "");
+            }
+        }
+
+        /// Validaciones icono de error campos obligatorios para los campos del estudiante
+        private void txtPaternoEstudiante_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtPaternoEstudiante.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtPaternoEstudiante, "El apellido paterno no debe ser un numero !!!");
+            }
+
+            else if (txtPaternoEstudiante.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtPaternoEstudiante, "El campo no debe estar vacio, Ingrese un apellido paterno !!!");
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtPaternoEstudiante, "");
+            }
+        }
+
+        private void txtMaternoEstudiante_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtMaternoEstudiante.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtMaternoEstudiante, "El apellido materno no debe ser un numero !!!");
+            }
+
+            else if (txtMaternoEstudiante.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtMaternoEstudiante, "El campo no debe estar vacio, Ingrese un apellido materno !!!");                
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtMaternoEstudiante, "");
+            }
+        }
+
+        private void txtNombrestudiante_Validating(object sender, CancelEventArgs e)
+        {
+            int num;
+
+            if (int.TryParse(txtNombrestudiante.Text, out num))
+            {
+                eprCamposObligatorios.SetError(txtNombrestudiante, "El nombre no debe ser un numero !!!");           
+            }
+
+            else if (txtNombrestudiante.Text == "")
+            {
+                eprCamposObligatorios.SetError(txtNombrestudiante, "El campo no debe estar vacio, Ingrese un nombre !!!");                
+            }
+
+            else
+            {
+                eprCamposObligatorios.SetError(txtNombrestudiante, "");
             }
         }
     }

@@ -38,6 +38,7 @@
             this.PageApoderado = new MetroFramework.Controls.MetroTabPage();
             this.btnRestaurarApoderado = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTelefonoApoderado = new System.Windows.Forms.MaskedTextBox();
             this.txtCelularApoderado = new System.Windows.Forms.MaskedTextBox();
             this.txtDNIApoderado = new System.Windows.Forms.MaskedTextBox();
             this.btnSeleccionarApoderado = new System.Windows.Forms.Button();
@@ -79,7 +80,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCrearEstudiante = new System.Windows.Forms.Button();
             this.tabEstudiante = new MetroFramework.Controls.MetroTabControl();
-            this.txtTelefonoApoderado = new System.Windows.Forms.MaskedTextBox();
+            this.eprCamposObligatorios = new System.Windows.Forms.ErrorProvider(this.components);
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.PageApoderado.SuspendLayout();
@@ -87,6 +88,7 @@
             this.PageEstudiante.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabEstudiante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).BeginInit();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -200,15 +202,25 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
+            // txtTelefonoApoderado
+            // 
+            this.txtTelefonoApoderado.Enabled = false;
+            this.txtTelefonoApoderado.Location = new System.Drawing.Point(685, 63);
+            this.txtTelefonoApoderado.Mask = "999999999";
+            this.txtTelefonoApoderado.Name = "txtTelefonoApoderado";
+            this.txtTelefonoApoderado.PromptChar = '*';
+            this.txtTelefonoApoderado.Size = new System.Drawing.Size(211, 21);
+            this.txtTelefonoApoderado.TabIndex = 27;
+            // 
             // txtCelularApoderado
             // 
             this.txtCelularApoderado.Enabled = false;
             this.txtCelularApoderado.Location = new System.Drawing.Point(685, 100);
-            this.txtCelularApoderado.Mask = "999999999";
+            this.txtCelularApoderado.Mask = "999 999 999";
             this.txtCelularApoderado.Name = "txtCelularApoderado";
-            this.txtCelularApoderado.PromptChar = '*';
             this.txtCelularApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtCelularApoderado.TabIndex = 26;
+            this.txtCelularApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtCelularApoderado_Validating);
             // 
             // txtDNIApoderado
             // 
@@ -220,7 +232,6 @@
             this.txtDNIApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtDNIApoderado.TabIndex = 25;
             this.txtDNIApoderado.ValidatingType = typeof(int);
-            this.txtDNIApoderado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNIApoderado_KeyPress);
             // 
             // btnSeleccionarApoderado
             // 
@@ -271,6 +282,7 @@
             this.txtDireccionApoderado.Name = "txtDireccionApoderado";
             this.txtDireccionApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtDireccionApoderado.TabIndex = 21;
+            this.txtDireccionApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccionApoderado_Validating);
             // 
             // label15
             // 
@@ -315,6 +327,7 @@
             this.txtNombreApoderado.Name = "txtNombreApoderado";
             this.txtNombreApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtNombreApoderado.TabIndex = 7;
+            this.txtNombreApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreApoderado_Validating);
             // 
             // txtMaternoApoderado
             // 
@@ -323,6 +336,7 @@
             this.txtMaternoApoderado.Name = "txtMaternoApoderado";
             this.txtMaternoApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtMaternoApoderado.TabIndex = 6;
+            this.txtMaternoApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaternoApoderado_Validating);
             // 
             // txtPaternoApoderado
             // 
@@ -331,6 +345,7 @@
             this.txtPaternoApoderado.Name = "txtPaternoApoderado";
             this.txtPaternoApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtPaternoApoderado.TabIndex = 5;
+            this.txtPaternoApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaternoApoderado_Validating);
             // 
             // label7
             // 
@@ -553,6 +568,7 @@
             this.txtNombrestudiante.Name = "txtNombrestudiante";
             this.txtNombrestudiante.Size = new System.Drawing.Size(300, 21);
             this.txtNombrestudiante.TabIndex = 7;
+            this.txtNombrestudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombrestudiante_Validating);
             // 
             // txtMaternoEstudiante
             // 
@@ -560,6 +576,7 @@
             this.txtMaternoEstudiante.Name = "txtMaternoEstudiante";
             this.txtMaternoEstudiante.Size = new System.Drawing.Size(300, 21);
             this.txtMaternoEstudiante.TabIndex = 6;
+            this.txtMaternoEstudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaternoEstudiante_Validating);
             // 
             // txtPaternoEstudiante
             // 
@@ -567,6 +584,7 @@
             this.txtPaternoEstudiante.Name = "txtPaternoEstudiante";
             this.txtPaternoEstudiante.Size = new System.Drawing.Size(300, 21);
             this.txtPaternoEstudiante.TabIndex = 5;
+            this.txtPaternoEstudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaternoEstudiante_Validating);
             // 
             // label6
             // 
@@ -636,22 +654,17 @@
             this.tabEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabEstudiante.Location = new System.Drawing.Point(21, 67);
             this.tabEstudiante.Name = "tabEstudiante";
-            this.tabEstudiante.SelectedIndex = 1;
+            this.tabEstudiante.SelectedIndex = 0;
             this.tabEstudiante.Size = new System.Drawing.Size(992, 394);
             this.tabEstudiante.TabIndex = 2;
             this.tabEstudiante.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tabEstudiante.UseSelectable = true;
             this.tabEstudiante.SelectedIndexChanged += new System.EventHandler(this.tabEstudiante_SelectedIndexChanged);
             // 
-            // txtTelefonoApoderado
+            // eprCamposObligatorios
             // 
-            this.txtTelefonoApoderado.Enabled = false;
-            this.txtTelefonoApoderado.Location = new System.Drawing.Point(685, 63);
-            this.txtTelefonoApoderado.Mask = "999999999";
-            this.txtTelefonoApoderado.Name = "txtTelefonoApoderado";
-            this.txtTelefonoApoderado.PromptChar = '*';
-            this.txtTelefonoApoderado.Size = new System.Drawing.Size(211, 21);
-            this.txtTelefonoApoderado.TabIndex = 27;
+            this.eprCamposObligatorios.ContainerControl = this;
+            this.eprCamposObligatorios.Icon = ((System.Drawing.Icon)(resources.GetObject("eprCamposObligatorios.Icon")));
             // 
             // frmEstudiante
             // 
@@ -679,6 +692,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabEstudiante.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,5 +749,6 @@
         private System.Windows.Forms.MaskedTextBox txtDNIApoderado;
         private System.Windows.Forms.MaskedTextBox txtCelularApoderado;
         private System.Windows.Forms.MaskedTextBox txtTelefonoApoderado;
+        private System.Windows.Forms.ErrorProvider eprCamposObligatorios;
     }
 }
