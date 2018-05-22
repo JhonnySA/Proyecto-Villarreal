@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuEstudiante));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxContenedor = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefrescarControlUsuario = new Bunifu.Framework.UI.BunifuImageButton();
@@ -59,6 +59,7 @@
             // 
             // gbxContenedor
             // 
+            this.gbxContenedor.BackColor = System.Drawing.Color.White;
             this.gbxContenedor.Controls.Add(this.groupBox1);
             this.gbxContenedor.Controls.Add(this.gbxFiltro);
             this.gbxContenedor.Location = new System.Drawing.Point(19, 45);
@@ -66,7 +67,7 @@
             this.gbxContenedor.Size = new System.Drawing.Size(1072, 504);
             this.gbxContenedor.TabIndex = 0;
             this.gbxContenedor.TabStop = false;
-            this.gbxContenedor.Text = "Listado de Estudiantes:";
+            this.gbxContenedor.Text = "LISTADO DE ESTUDIANTES";
             // 
             // groupBox1
             // 
@@ -117,19 +118,19 @@
             // 
             // gvEstudiante
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvEstudiante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvEstudiante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.gvEstudiante.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvEstudiante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvEstudiante.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvEstudiante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvEstudiante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.gvEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvEstudiante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvEstudiante.DoubleBuffered = true;
@@ -170,6 +171,7 @@
             // 
             // cbxServicio
             // 
+            this.cbxServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxServicio.FormattingEnabled = true;
             this.cbxServicio.Location = new System.Drawing.Point(36, 70);
             this.cbxServicio.Name = "cbxServicio";
@@ -204,11 +206,14 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(756, 574);
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(773, 651);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(145, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(92, 29);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -221,11 +226,14 @@
             this.btnDetalleDeuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleDeuda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleDeuda.ForeColor = System.Drawing.Color.White;
-            this.btnDetalleDeuda.Location = new System.Drawing.Point(959, 574);
+            this.btnDetalleDeuda.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleDeuda.Image")));
+            this.btnDetalleDeuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalleDeuda.Location = new System.Drawing.Point(895, 651);
             this.btnDetalleDeuda.Name = "btnDetalleDeuda";
-            this.btnDetalleDeuda.Size = new System.Drawing.Size(145, 23);
+            this.btnDetalleDeuda.Size = new System.Drawing.Size(152, 29);
             this.btnDetalleDeuda.TabIndex = 2;
             this.btnDetalleDeuda.Text = "Ver detalle de deuda";
+            this.btnDetalleDeuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetalleDeuda.UseVisualStyleBackColor = false;
             this.btnDetalleDeuda.Visible = false;
             // 
@@ -238,11 +246,14 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(551, 574);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(664, 651);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(145, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(91, 29);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -255,18 +266,23 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(347, 574);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(552, 651);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(145, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(91, 29);
             this.btnNuevo.TabIndex = 4;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "  Nuevo   ";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblRecord
             // 
             this.lblRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecord.Location = new System.Drawing.Point(604, 533);
+            this.lblRecord.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecord.ForeColor = System.Drawing.Color.Green;
+            this.lblRecord.Location = new System.Drawing.Point(568, 566);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(500, 16);
             this.lblRecord.TabIndex = 7;
@@ -276,17 +292,17 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
-            this.panel2.Location = new System.Drawing.Point(1053, 611);
+            this.panel2.Location = new System.Drawing.Point(1053, 657);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(97, 32);
+            this.panel2.Size = new System.Drawing.Size(97, 27);
             this.panel2.TabIndex = 11;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
-            this.panel1.Location = new System.Drawing.Point(0, 611);
+            this.panel1.Location = new System.Drawing.Point(0, 657);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(507, 32);
+            this.panel1.Size = new System.Drawing.Size(510, 27);
             this.panel1.TabIndex = 10;
             // 
             // cuEstudiante
@@ -304,7 +320,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "cuEstudiante";
-            this.Size = new System.Drawing.Size(1150, 700);
+            this.Size = new System.Drawing.Size(1150, 683);
             this.Load += new System.EventHandler(this.cuEstudiante_Load);
             this.gbxContenedor.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

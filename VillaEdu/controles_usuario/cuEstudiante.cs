@@ -62,7 +62,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRE", "SEXO", "CUMPLEAÑOS", "APODERADO", "TELEFONO", "CELULAR", "DIRECCION" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("NUMERO DE ESTUDIANTES: " + record().ToString());
+            refrescarRecord("Nùmero de Estudiantes: " + record().ToString());
         }
 
         private void cargarComboServicios()
@@ -127,7 +127,7 @@ namespace VillaEdu.controles_usuario
 
                     // Refrescar la tabla de estudiante
                     cargarGrid(consulta, encabezados);
-                    refrescarRecord("NUMERO DE ESTUDIANTES: " + record());
+                    refrescarRecord("Nùmero de Estudiantes: " + record());
                 }
 
             }
@@ -150,7 +150,7 @@ namespace VillaEdu.controles_usuario
                 consulta = "select e.codEstudiante, e.apPaterno, e.apMaterno, e.nombre, sexo, CONVERT(varchar, day(fechaNacimiento)) + ' de ' + DATENAME(month, fechaNacimiento) as cumpleaños, a.apPaterno + ' ' + a.apMaterno + ' ; ' + a.nombre as apo, a.telefono, a.celular, a.direccion From Estudiante as e inner join Apoderado as a on e.codApoderado = a.codApoderado";
 
                 cargarGrid(consulta, encabezados);
-                refrescarRecord("NUMERO DE ESTUDIANTES: " + record());
+                refrescarRecord("Nùmero de Estudiantes: " + record());
             }
             catch (Exception ex)
             {
@@ -349,7 +349,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRE", "SEXO", "CUMPLEAÑOS", "APODERADO", "TELEFONO", "CELULAR", "DIRECCION" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("NUMERO DE ESTUDIANTES: " + record().ToString());
+            refrescarRecord("Nùmero de Estudiantes: " + record().ToString());
         }
     }
 }

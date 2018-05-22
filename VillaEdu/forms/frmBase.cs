@@ -243,5 +243,10 @@ namespace VillaEdu.forms
         {
             abrirUC(new controles_usuario.cuCuotaMatricula());                        
         }
+
+        private void panMenuSlider_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
