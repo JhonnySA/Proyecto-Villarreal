@@ -82,7 +82,7 @@
             this.lblIDGrupo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIDInstitucion = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnSeleccionarGrupo = new Bunifu.Framework.UI.BunifuImageButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -100,6 +100,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblFechaMatricula = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblNumeroMatricula = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.eprCamposObligatorios = new System.Windows.Forms.ErrorProvider(this.components);
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -116,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarGrupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarInstitucion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarEstudiante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).BeginInit();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -479,6 +481,7 @@
             0,
             0,
             0});
+            this.numCuota3.Visible = false;
             // 
             // lblCuota3
             // 
@@ -511,6 +514,7 @@
             0,
             0,
             0});
+            this.numCuota2.Visible = false;
             // 
             // lblCuota2
             // 
@@ -543,6 +547,7 @@
             0,
             0,
             0});
+            this.numCuota1.Visible = false;
             this.numCuota1.ValueChanged += new System.EventHandler(this.numCuota1_ValueChanged);
             // 
             // lblCuota1
@@ -609,7 +614,7 @@
             this.gbxInformacionGeneral.Controls.Add(this.lblIDGrupo);
             this.gbxInformacionGeneral.Controls.Add(this.lblIDInstitucion);
             this.gbxInformacionGeneral.Controls.Add(this.btnSeleccionarGrupo);
-            this.gbxInformacionGeneral.Controls.Add(this.textBox1);
+            this.gbxInformacionGeneral.Controls.Add(this.txtGrupo);
             this.gbxInformacionGeneral.Controls.Add(this.bunifuCustomLabel3);
             this.gbxInformacionGeneral.Controls.Add(this.bunifuCustomLabel9);
             this.gbxInformacionGeneral.Controls.Add(this.bunifuCustomLabel8);
@@ -699,7 +704,7 @@
             this.cbxServicio.Location = new System.Drawing.Point(163, 28);
             this.cbxServicio.Name = "cbxServicio";
             this.cbxServicio.Size = new System.Drawing.Size(199, 24);
-            this.cbxServicio.TabIndex = 24;
+            this.cbxServicio.TabIndex = 24;            
             // 
             // lblIDGrupo
             // 
@@ -732,13 +737,13 @@
             this.btnSeleccionarGrupo.Zoom = 10;
             this.btnSeleccionarGrupo.Click += new System.EventHandler(this.btnSeleccionarGrupo_Click);
             // 
-            // textBox1
+            // txtGrupo
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(164, 375);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 21);
-            this.textBox1.TabIndex = 20;
+            this.txtGrupo.Enabled = false;
+            this.txtGrupo.Location = new System.Drawing.Point(164, 375);
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(199, 21);
+            this.txtGrupo.TabIndex = 20;
             // 
             // bunifuCustomLabel3
             // 
@@ -807,6 +812,7 @@
             this.txtInstitucion.Name = "txtInstitucion";
             this.txtInstitucion.Size = new System.Drawing.Size(199, 21);
             this.txtInstitucion.TabIndex = 11;
+            this.txtInstitucion.TextChanged += new System.EventHandler(this.txtInstitucion_TextChanged);
             // 
             // bunifuCustomLabel5
             // 
@@ -873,6 +879,7 @@
             this.txtEstudiante.Name = "txtEstudiante";
             this.txtEstudiante.Size = new System.Drawing.Size(199, 21);
             this.txtEstudiante.TabIndex = 1;
+            this.txtEstudiante.TextChanged += new System.EventHandler(this.txtEstudiante_TextChanged);
             // 
             // bunifuCustomLabel1
             // 
@@ -899,6 +906,11 @@
             this.lblNumeroMatricula.Name = "lblNumeroMatricula";
             this.lblNumeroMatricula.Size = new System.Drawing.Size(317, 13);
             this.lblNumeroMatricula.TabIndex = 0;
+            // 
+            // eprCamposObligatorios
+            // 
+            this.eprCamposObligatorios.ContainerControl = this;
+            this.eprCamposObligatorios.Icon = ((System.Drawing.Icon)(resources.GetObject("eprCamposObligatorios.Icon")));
             // 
             // frmMatricula
             // 
@@ -938,6 +950,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarInstitucion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarEstudiante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -970,7 +983,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuImageButton btnSeleccionarGrupo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGrupo;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel lblIDInstitucion;
         private System.Windows.Forms.TextBox txtObservacion;
@@ -1014,5 +1027,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblIDServicio;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
         private System.Windows.Forms.ComboBox cbxGrado;
+        private System.Windows.Forms.ErrorProvider eprCamposObligatorios;
     }
 }

@@ -218,6 +218,7 @@ namespace VillaEdu.forms
                 }
 
                 lblIDServicio.Text = cbxServicio.SelectedValue.ToString();
+                eprCamposObligatorios.SetError(cbxServicio, "");
             }
         }
 
@@ -710,15 +711,19 @@ namespace VillaEdu.forms
             }
         }
 
+        /// Para crear una matricula es necesario validar que se llenen ciertos campos        
         private void btnCrearMatricula_Click(object sender, EventArgs e)
         {
-            /// Validar que los montos juntos si es credito sean correctos
-            /// Vaidar campos obligatorios como minimo para insertar
-            if (montoCorrecto())
+            if (validarCamposObligatoriosMatricula())
             {
                 /// Dentro del insertar Matricula
                 /// Insertar las cuotas dependiendo al numero de cuotas que se le establesca
                 insertarMatricula();
+            }
+
+            else
+            {
+                MessageBox.Show("Existen datos obligatorios!! \n Datos incompletos...!", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -833,6 +838,46 @@ namespace VillaEdu.forms
             }
         }
 
+        /// Validacion de campos obligatorios para ingresar un docente Error Provider
+        /// True si estan completos todos los campos
+        /// False si algun campo obligatorio no esta completo
+        private bool validarCamposObligatoriosMatricula()
+        {
+            bool valor = true;
+
+            try
+            {
+                if (txtEstudiante.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtEstudiante, "El campo no debe estar vacio, Seleccione un estudiante registrado o inserte uno nuevo");
+                    valor = false;
+                }
+
+                if (txtInstitucion.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtInstitucion, "El campo no debe estar vacio, Seleccione una institucion registrada o inserte una nuevo");
+                    valor = false;
+                }
+
+                if (lblIDGrupo.Text == "")
+                {
+                    eprCamposObligatorios.SetError(txtGrupo, "El campo no debe estar vacio, Seleccione un grupo a matricular");
+                    valor = false;
+                }
+
+                if (cbxServicio.Text.Equals("Seleccione un Servicio"))
+                {
+                    eprCamposObligatorios.SetError(cbxServicio, "Seleccione un servicio");
+                    valor = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return valor;
+        }
+
         private void insertarCuotasMatricula(int idMat, int numCuota, DateTimePicker[] listaFechas, NumericUpDown[] listaCantidades)
         {
             try
@@ -880,6 +925,23 @@ namespace VillaEdu.forms
             {
                 MessageBox.Show("Error en la creacion de las cuotas de la Matricula ... !" + "\n\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conex.Close();
+            }
+        }
+
+        /// Validaciones icono de error campos obligatorios para los campos de matriculas
+        private void txtEstudiante_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtEstudiante.Text.Equals(""))
+            {
+                eprCamposObligatorios.SetError(txtEstudiante, "");
+            }
+        }
+
+        private void txtInstitucion_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtInstitucion.Text.Equals(""))
+            {
+                eprCamposObligatorios.SetError(txtInstitucion, "");
             }
         }
     }

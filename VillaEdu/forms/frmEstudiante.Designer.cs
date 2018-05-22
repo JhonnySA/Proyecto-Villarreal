@@ -80,6 +80,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCrearEstudiante = new System.Windows.Forms.Button();
             this.tabEstudiante = new MetroFramework.Controls.MetroTabControl();
+            this.eprCamposObligatorios = new System.Windows.Forms.ErrorProvider(this.components);
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.PageApoderado.SuspendLayout();
@@ -87,6 +88,7 @@
             this.PageEstudiante.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabEstudiante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).BeginInit();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -105,7 +107,7 @@
             // 
             // panTop
             // 
-            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(199)))), ((int)(((byte)(204)))));
+            this.panTop.BackColor = System.Drawing.Color.LemonChiffon;
             this.panTop.Controls.Add(this.label1);
             this.panTop.Controls.Add(this.btnCerrar);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -117,11 +119,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(570, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 16);
+            this.label1.Size = new System.Drawing.Size(252, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Centro de esudios personalizado \"VILLARREAL\"";
             // 
@@ -162,19 +162,15 @@
             // btnRestaurarApoderado
             // 
             this.btnRestaurarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
+            this.btnRestaurarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnRestaurarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurarApoderado.FlatAppearance.BorderSize = 0;
             this.btnRestaurarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarApoderado.ForeColor = System.Drawing.Color.White;
-            this.btnRestaurarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarApoderado.Image")));
-            this.btnRestaurarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurarApoderado.Location = new System.Drawing.Point(591, 316);
+            this.btnRestaurarApoderado.Location = new System.Drawing.Point(419, 316);
             this.btnRestaurarApoderado.Name = "btnRestaurarApoderado";
-            this.btnRestaurarApoderado.Size = new System.Drawing.Size(103, 29);
+            this.btnRestaurarApoderado.Size = new System.Drawing.Size(211, 23);
             this.btnRestaurarApoderado.TabIndex = 19;
-            this.btnRestaurarApoderado.Text = "     Restaurar";
+            this.btnRestaurarApoderado.Text = "Restaurar";
             this.btnRestaurarApoderado.UseVisualStyleBackColor = false;
             this.btnRestaurarApoderado.Visible = false;
             this.btnRestaurarApoderado.Click += new System.EventHandler(this.btnRestaurarApoderado_Click);
@@ -184,6 +180,7 @@
             this.groupBox2.Controls.Add(this.txtTelefonoApoderado);
             this.groupBox2.Controls.Add(this.txtCelularApoderado);
             this.groupBox2.Controls.Add(this.txtDNIApoderado);
+            this.groupBox2.Controls.Add(this.btnSeleccionarApoderado);
             this.groupBox2.Controls.Add(this.txtCorreoApoderado);
             this.groupBox2.Controls.Add(this.lblIDApoderado);
             this.groupBox2.Controls.Add(this.lblApoderado);
@@ -199,7 +196,6 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.btnSeleccionarApoderado);
             this.groupBox2.Location = new System.Drawing.Point(16, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(953, 268);
@@ -220,11 +216,11 @@
             // 
             this.txtCelularApoderado.Enabled = false;
             this.txtCelularApoderado.Location = new System.Drawing.Point(685, 100);
-            this.txtCelularApoderado.Mask = "999999999";
+            this.txtCelularApoderado.Mask = "999 999 999";
             this.txtCelularApoderado.Name = "txtCelularApoderado";
-            this.txtCelularApoderado.PromptChar = '*';
             this.txtCelularApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtCelularApoderado.TabIndex = 26;
+            this.txtCelularApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtCelularApoderado_Validating);
             // 
             // txtDNIApoderado
             // 
@@ -236,24 +232,19 @@
             this.txtDNIApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtDNIApoderado.TabIndex = 25;
             this.txtDNIApoderado.ValidatingType = typeof(int);
-            this.txtDNIApoderado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNIApoderado_KeyPress);
             // 
             // btnSeleccionarApoderado
             // 
             this.btnSeleccionarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
+            this.btnSeleccionarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSeleccionarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionarApoderado.FlatAppearance.BorderSize = 0;
             this.btnSeleccionarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarApoderado.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarApoderado.Image")));
-            this.btnSeleccionarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSeleccionarApoderado.Location = new System.Drawing.Point(685, 217);
             this.btnSeleccionarApoderado.Name = "btnSeleccionarApoderado";
-            this.btnSeleccionarApoderado.Size = new System.Drawing.Size(174, 29);
+            this.btnSeleccionarApoderado.Size = new System.Drawing.Size(211, 23);
             this.btnSeleccionarApoderado.TabIndex = 19;
-            this.btnSeleccionarApoderado.Text = "      Seleccionar Apoderado";
+            this.btnSeleccionarApoderado.Text = "Seleccionar Apoderado";
             this.btnSeleccionarApoderado.UseVisualStyleBackColor = false;
             this.btnSeleccionarApoderado.Visible = false;
             this.btnSeleccionarApoderado.Click += new System.EventHandler(this.btnSeleccionarApoderado_Click);
@@ -291,6 +282,7 @@
             this.txtDireccionApoderado.Name = "txtDireccionApoderado";
             this.txtDireccionApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtDireccionApoderado.TabIndex = 21;
+            this.txtDireccionApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccionApoderado_Validating);
             // 
             // label15
             // 
@@ -335,6 +327,7 @@
             this.txtNombreApoderado.Name = "txtNombreApoderado";
             this.txtNombreApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtNombreApoderado.TabIndex = 7;
+            this.txtNombreApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombreApoderado_Validating);
             // 
             // txtMaternoApoderado
             // 
@@ -343,6 +336,7 @@
             this.txtMaternoApoderado.Name = "txtMaternoApoderado";
             this.txtMaternoApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtMaternoApoderado.TabIndex = 6;
+            this.txtMaternoApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaternoApoderado_Validating);
             // 
             // txtPaternoApoderado
             // 
@@ -351,6 +345,7 @@
             this.txtPaternoApoderado.Name = "txtPaternoApoderado";
             this.txtPaternoApoderado.Size = new System.Drawing.Size(211, 21);
             this.txtPaternoApoderado.TabIndex = 5;
+            this.txtPaternoApoderado.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaternoApoderado_Validating);
             // 
             // label7
             // 
@@ -391,20 +386,15 @@
             // btnNuevoApoderado
             // 
             this.btnNuevoApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
+            this.btnNuevoApoderado.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnNuevoApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoApoderado.FlatAppearance.BorderSize = 0;
             this.btnNuevoApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoApoderado.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoApoderado.Image")));
-            this.btnNuevoApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoApoderado.Location = new System.Drawing.Point(731, 316);
+            this.btnNuevoApoderado.Location = new System.Drawing.Point(701, 316);
             this.btnNuevoApoderado.Name = "btnNuevoApoderado";
-            this.btnNuevoApoderado.Size = new System.Drawing.Size(94, 29);
+            this.btnNuevoApoderado.Size = new System.Drawing.Size(211, 23);
             this.btnNuevoApoderado.TabIndex = 17;
-            this.btnNuevoApoderado.Text = " Nuevo  ";
-            this.btnNuevoApoderado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoApoderado.Text = "Nuevo";
             this.btnNuevoApoderado.UseVisualStyleBackColor = false;
             this.btnNuevoApoderado.Visible = false;
             this.btnNuevoApoderado.Click += new System.EventHandler(this.btnNuevoApoderado_Click);
@@ -412,19 +402,15 @@
             // btnActualizarApoderado
             // 
             this.btnActualizarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
+            this.btnActualizarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnActualizarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarApoderado.FlatAppearance.BorderSize = 0;
             this.btnActualizarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarApoderado.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarApoderado.Image")));
-            this.btnActualizarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarApoderado.Location = new System.Drawing.Point(731, 316);
+            this.btnActualizarApoderado.Location = new System.Drawing.Point(701, 316);
             this.btnActualizarApoderado.Name = "btnActualizarApoderado";
-            this.btnActualizarApoderado.Size = new System.Drawing.Size(94, 29);
+            this.btnActualizarApoderado.Size = new System.Drawing.Size(211, 23);
             this.btnActualizarApoderado.TabIndex = 16;
-            this.btnActualizarApoderado.Text = "      Actualizar";
+            this.btnActualizarApoderado.Text = "Actualizar";
             this.btnActualizarApoderado.UseVisualStyleBackColor = false;
             this.btnActualizarApoderado.Visible = false;
             this.btnActualizarApoderado.Click += new System.EventHandler(this.btnActualizarApoderado_Click);
@@ -450,12 +436,10 @@
             // btnRestaurarEstudiante
             // 
             this.btnRestaurarEstudiante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(162)))), ((int)(((byte)(156)))));
+            this.btnRestaurarEstudiante.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnRestaurarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurarEstudiante.FlatAppearance.BorderSize = 0;
             this.btnRestaurarEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarEstudiante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarEstudiante.ForeColor = System.Drawing.Color.White;
             this.btnRestaurarEstudiante.Location = new System.Drawing.Point(462, 313);
             this.btnRestaurarEstudiante.Name = "btnRestaurarEstudiante";
             this.btnRestaurarEstudiante.Size = new System.Drawing.Size(200, 23);
@@ -468,12 +452,10 @@
             // btnActualizarEstudiante
             // 
             this.btnActualizarEstudiante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(162)))), ((int)(((byte)(156)))));
+            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnActualizarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarEstudiante.FlatAppearance.BorderSize = 0;
             this.btnActualizarEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarEstudiante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarEstudiante.ForeColor = System.Drawing.Color.White;
             this.btnActualizarEstudiante.Location = new System.Drawing.Point(725, 313);
             this.btnActualizarEstudiante.Name = "btnActualizarEstudiante";
             this.btnActualizarEstudiante.Size = new System.Drawing.Size(200, 23);
@@ -557,12 +539,10 @@
             // btnRegistroAcademico
             // 
             this.btnRegistroAcademico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistroAcademico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(162)))), ((int)(((byte)(156)))));
+            this.btnRegistroAcademico.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnRegistroAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistroAcademico.FlatAppearance.BorderSize = 0;
             this.btnRegistroAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistroAcademico.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistroAcademico.ForeColor = System.Drawing.Color.White;
             this.btnRegistroAcademico.Location = new System.Drawing.Point(702, 224);
             this.btnRegistroAcademico.Name = "btnRegistroAcademico";
             this.btnRegistroAcademico.Size = new System.Drawing.Size(200, 23);
@@ -588,6 +568,7 @@
             this.txtNombrestudiante.Name = "txtNombrestudiante";
             this.txtNombrestudiante.Size = new System.Drawing.Size(300, 21);
             this.txtNombrestudiante.TabIndex = 7;
+            this.txtNombrestudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombrestudiante_Validating);
             // 
             // txtMaternoEstudiante
             // 
@@ -595,6 +576,7 @@
             this.txtMaternoEstudiante.Name = "txtMaternoEstudiante";
             this.txtMaternoEstudiante.Size = new System.Drawing.Size(300, 21);
             this.txtMaternoEstudiante.TabIndex = 6;
+            this.txtMaternoEstudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaternoEstudiante_Validating);
             // 
             // txtPaternoEstudiante
             // 
@@ -602,6 +584,7 @@
             this.txtPaternoEstudiante.Name = "txtPaternoEstudiante";
             this.txtPaternoEstudiante.Size = new System.Drawing.Size(300, 21);
             this.txtPaternoEstudiante.TabIndex = 5;
+            this.txtPaternoEstudiante.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaternoEstudiante_Validating);
             // 
             // label6
             // 
@@ -678,6 +661,11 @@
             this.tabEstudiante.UseSelectable = true;
             this.tabEstudiante.SelectedIndexChanged += new System.EventHandler(this.tabEstudiante_SelectedIndexChanged);
             // 
+            // eprCamposObligatorios
+            // 
+            this.eprCamposObligatorios.ContainerControl = this;
+            this.eprCamposObligatorios.Icon = ((System.Drawing.Icon)(resources.GetObject("eprCamposObligatorios.Icon")));
+            // 
             // frmEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -704,6 +692,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabEstudiante.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eprCamposObligatorios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,5 +749,6 @@
         private System.Windows.Forms.MaskedTextBox txtDNIApoderado;
         private System.Windows.Forms.MaskedTextBox txtCelularApoderado;
         private System.Windows.Forms.MaskedTextBox txtTelefonoApoderado;
+        private System.Windows.Forms.ErrorProvider eprCamposObligatorios;
     }
 }

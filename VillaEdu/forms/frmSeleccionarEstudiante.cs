@@ -220,6 +220,7 @@ namespace VillaEdu.forms
                 // Pasar como parametro el id del estudiante seleccionado 
 
                 forms.frmEstudiante est = new forms.frmEstudiante(0);
+                est.devolucion = 1;
                 est.pasado += new forms.frmEstudiante.PasarID(capturarInformacionEstudiante);
                 est.ShowDialog();
 

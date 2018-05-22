@@ -37,7 +37,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO", "DNI", "DIRECCION", "ESPECIALIZAD", "GRADO", "FOTO" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("Nùmero de Docentes: " + record().ToString());
+            refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace VillaEdu.controles_usuario
                 gvDocente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 gvDocente.MultiSelect = false;
                 gvDocente.ReadOnly = true;
-                gvDocente.AllowUserToResizeRows = false;                
+                gvDocente.AllowUserToResizeRows = false;
 
                 // Seleccionar por defecto la primera fila del gridView
                 gvDocente.Rows[0].Selected = true;
@@ -150,6 +150,24 @@ namespace VillaEdu.controles_usuario
                 MessageBox.Show(e.Message);
             }
             return celda;
+        }
+
+        private bool existeValorCelda(string column)
+        {
+            bool valor = false;
+
+            try
+            {
+                if (gvDocente.CurrentRow.Cells[column].Value.ToString() != "")
+                {
+                    valor = true;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return valor;
         }
 
         public int record()
@@ -191,18 +209,59 @@ namespace VillaEdu.controles_usuario
 
         }
 
-        private void btnActualizarDocente_Click(object sender, EventArgs e)
+        private void btnNuevoDocente_Click(object sender, EventArgs e)
         {
+            forms.frmDocente doc = new forms.frmDocente(0);
+
+            doc.ShowDialog();
+            cargarGrid(consulta, encabezados);
+            refrescarRecord("NUMERO DE DOCENTES: " + record());
+        }
+
+        private void btnEliminarDocente_Click(object sender, EventArgs e)
+        {
+            string nombreCompleto = "";
+
+            if (existeValorCelda("apPaterno"))
+            {
+                nombreCompleto = valorCelda("apPaterno") + " " + valorCelda("apMaterno") + " ;" + valorCelda("nombre");
+            }
+            else if (valorCelda("docente") != "")
+            {
+                nombreCompleto = valorCelda("docente");
+            }
+
             try
             {
-                // Pasar el Valor de la accion 0 - Creacion y 1 - Actualizacion
-                // Pasar como parametro el id del docente seleccionado 
+                int rpta = 0;
+                DialogResult boton;
 
-                forms.frmDocente doc = new forms.frmDocente(1);
-                doc.cod = Convert.ToInt16(valorCelda("codDocente"));
+                boton = MessageBox.Show("Esta seguro que desea eliminar a este docente? ... \n" + nombreCompleto + "\n" + "Con ID de Docente: " + valorCelda("codDocente"), "QUESTION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                doc.ShowDialog();
-                cargarGrid(consulta, encabezados);
+                // DELETE Docente
+                if (boton == System.Windows.Forms.DialogResult.Yes)
+                {
+                    SqlCommand cmd = new SqlCommand("Delete Docente where codDocente= @cod", conex);
+                    cmd.Parameters.Add("@cod", SqlDbType.Int).Value = Convert.ToInt16(valorCelda("codDocente"));
+                    try
+                    {
+                        conex.Open();
+                        rpta = cmd.ExecuteNonQuery();
+                        conex.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("No se puede eliminar el registro ..., Posiblemente este Docente contenga contrato(s) activos ... \n\n\n DETALLES:\n" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        conex.Close();
+                    }
+                    if (rpta == 1)
+                        controles_usuario.CustomDialog.ShowDialog("SE HA ELIMINADO CORRECTAMENTE AL DOCENTE !!!");
+
+                    // Refrescar la tabla de estudiante
+                    cargarGrid(consulta, encabezados);
+                    refrescarRecord("NUMERO DE DOCENTES: " + record());
+                }
+
             }
             catch (Exception ex)
             {
@@ -210,13 +269,31 @@ namespace VillaEdu.controles_usuario
             }
         }
 
-        private void btnNuevoDocente_Click(object sender, EventArgs e)
+        private void btnActualizarDocente_Click(object sender, EventArgs e)
         {
-            forms.frmDocente doc = new forms.frmDocente(0);
+            try
+            {
+                // Pasar el Valor de la accion 0 - Creacion y 1 - Actualizacion
+                // Pasar como parametro el id del docente seleccionado 
 
-            doc.ShowDialog();
-            cargarGrid(consulta, encabezados);
-            refrescarRecord("Nùmero de Docentes: " + record());
+                if (gvDocente.Rows.Count > 0)
+                {
+                    forms.frmDocente doc = new forms.frmDocente(1);
+                    doc.cod = Convert.ToInt16(valorCelda("codDocente"));
+
+                    doc.ShowDialog();
+                    cargarGrid(consulta, encabezados);
+                }
+
+                else
+                {
+                    MessageBox.Show("No existen registros para eliminar...!!!", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void chxDocenteActivo_CheckedChanged(object sender, EventArgs e)
@@ -225,12 +302,12 @@ namespace VillaEdu.controles_usuario
             {
                 txtFiltroApoderado.Focus();
 
-                consulta = "Select codDocente, apPaterno, apMaterno, nombre from Docente";
+                consulta = "Select codDocente, apPaterno + ' ' + apMaterno + ' ;' + nombre as docente from Docente";
 
                 encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES" };
 
                 cargarGrid(consulta, encabezados);
-                refrescarRecord("Nùmero de Docentes:" + record().ToString());
+                refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
             }
             else
             {
@@ -241,7 +318,7 @@ namespace VillaEdu.controles_usuario
                 encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO" };
 
                 cargarGrid(consulta, encabezados);
-                refrescarRecord("Nùmero de Docentes:" + record().ToString());
+                refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
             }
         }
 
@@ -255,7 +332,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO", "DNI", "DIRECCION", "ESPECIALIZAD", "GRADO", "FOTO" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("Nùmero de Docentes: " + record().ToString());
+            refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
         }
     }
 }

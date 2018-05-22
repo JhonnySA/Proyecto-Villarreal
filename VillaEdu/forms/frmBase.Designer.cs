@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunMoverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panLineaTopDetalle = new System.Windows.Forms.Panel();
             this.panMenuSlider = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnCalendario = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
-            this.panSMServicio = new System.Windows.Forms.Panel();
-            this.btnSMMatricula = new System.Windows.Forms.Button();
-            this.btnSMClasesPracticas = new System.Windows.Forms.Button();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnServicio = new System.Windows.Forms.Button();
@@ -56,6 +53,9 @@
             this.panSMGrupo = new System.Windows.Forms.Panel();
             this.btnSMAsignarDocente = new System.Windows.Forms.Button();
             this.btnSMCrearGrupo = new System.Windows.Forms.Button();
+            this.panSMServicio = new System.Windows.Forms.Panel();
+            this.btnSMMatricula = new System.Windows.Forms.Button();
+            this.btnSMClasesPracticas = new System.Windows.Forms.Button();
             this.bunAnimLogo = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -68,11 +68,11 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunAnimSlider = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panMenuSlider.SuspendLayout();
-            this.panSMServicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).BeginInit();
             this.panSMPago.SuspendLayout();
             this.panSMGrupo.SuspendLayout();
+            this.panSMServicio.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMiximixar)).BeginInit();
@@ -135,7 +135,6 @@
             this.panMenuSlider.Quality = 10;
             this.panMenuSlider.Size = new System.Drawing.Size(240, 744);
             this.panMenuSlider.TabIndex = 2;
-            this.panMenuSlider.Paint += new System.Windows.Forms.PaintEventHandler(this.panMenuSlider_Paint);
             // 
             // btnCalendario
             // 
@@ -178,57 +177,6 @@
             this.btnReporte.Text = "             Reportes";
             this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte.UseVisualStyleBackColor = false;
-            // 
-            // panSMServicio
-            // 
-            this.panSMServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panSMServicio.Controls.Add(this.btnSMMatricula);
-            this.panSMServicio.Controls.Add(this.btnSMClasesPracticas);
-            this.bunAnimSlider.SetDecoration(this.panSMServicio, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimLogo.SetDecoration(this.panSMServicio, BunifuAnimatorNS.DecorationType.None);
-            this.panSMServicio.Location = new System.Drawing.Point(0, 463);
-            this.panSMServicio.Name = "panSMServicio";
-            this.panSMServicio.Size = new System.Drawing.Size(240, 75);
-            this.panSMServicio.TabIndex = 13;
-            this.panSMServicio.Visible = false;
-            // 
-            // btnSMMatricula
-            // 
-            this.btnSMMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSMMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunAnimLogo.SetDecoration(this.btnSMMatricula, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.btnSMMatricula, BunifuAnimatorNS.DecorationType.None);
-            this.btnSMMatricula.FlatAppearance.BorderSize = 0;
-            this.btnSMMatricula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
-            this.btnSMMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMMatricula.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSMMatricula.ForeColor = System.Drawing.Color.White;
-            this.btnSMMatricula.Location = new System.Drawing.Point(3, 40);
-            this.btnSMMatricula.Name = "btnSMMatricula";
-            this.btnSMMatricula.Size = new System.Drawing.Size(237, 30);
-            this.btnSMMatricula.TabIndex = 13;
-            this.btnSMMatricula.Text = " Matriculas";
-            this.btnSMMatricula.UseVisualStyleBackColor = false;
-            this.btnSMMatricula.Click += new System.EventHandler(this.btnSMMatricula_Click);
-            // 
-            // btnSMClasesPracticas
-            // 
-            this.btnSMClasesPracticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSMClasesPracticas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunAnimLogo.SetDecoration(this.btnSMClasesPracticas, BunifuAnimatorNS.DecorationType.None);
-            this.bunAnimSlider.SetDecoration(this.btnSMClasesPracticas, BunifuAnimatorNS.DecorationType.None);
-            this.btnSMClasesPracticas.FlatAppearance.BorderSize = 0;
-            this.btnSMClasesPracticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
-            this.btnSMClasesPracticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSMClasesPracticas.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSMClasesPracticas.ForeColor = System.Drawing.Color.White;
-            this.btnSMClasesPracticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSMClasesPracticas.Location = new System.Drawing.Point(3, 3);
-            this.btnSMClasesPracticas.Name = "btnSMClasesPracticas";
-            this.btnSMClasesPracticas.Size = new System.Drawing.Size(237, 31);
-            this.btnSMClasesPracticas.TabIndex = 12;
-            this.btnSMClasesPracticas.Text = " Clases y/o Practicas";
-            this.btnSMClasesPracticas.UseVisualStyleBackColor = false;
             // 
             // btnPago
             // 
@@ -366,7 +314,6 @@
             this.bunAnimLogo.SetDecoration(this.btnEstudiante, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimSlider.SetDecoration(this.btnEstudiante, BunifuAnimatorNS.DecorationType.None);
             this.btnEstudiante.FlatAppearance.BorderSize = 0;
-            this.btnEstudiante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstudiante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -402,9 +349,9 @@
             this.bunAnimLogo.SetDecoration(this.pbxLogoMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimSlider.SetDecoration(this.pbxLogoMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.pbxLogoMenuSlider.Image = ((System.Drawing.Image)(resources.GetObject("pbxLogoMenuSlider.Image")));
-            this.pbxLogoMenuSlider.Location = new System.Drawing.Point(22, 34);
+            this.pbxLogoMenuSlider.Location = new System.Drawing.Point(22, 45);
             this.pbxLogoMenuSlider.Name = "pbxLogoMenuSlider";
-            this.pbxLogoMenuSlider.Size = new System.Drawing.Size(177, 112);
+            this.pbxLogoMenuSlider.Size = new System.Drawing.Size(177, 101);
             this.pbxLogoMenuSlider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxLogoMenuSlider.TabIndex = 10;
             this.pbxLogoMenuSlider.TabStop = false;
@@ -416,9 +363,9 @@
             this.panSMPago.Controls.Add(this.btnSMPagoCuotaMatricula);
             this.bunAnimSlider.SetDecoration(this.panSMPago, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panSMPago, BunifuAnimatorNS.DecorationType.None);
-            this.panSMPago.Location = new System.Drawing.Point(0, 463);
+            this.panSMPago.Location = new System.Drawing.Point(22, 463);
             this.panSMPago.Name = "panSMPago";
-            this.panSMPago.Size = new System.Drawing.Size(240, 75);
+            this.panSMPago.Size = new System.Drawing.Size(210, 75);
             this.panSMPago.TabIndex = 14;
             this.panSMPago.Visible = false;
             // 
@@ -435,9 +382,9 @@
             this.btnSMPagoDocente.ForeColor = System.Drawing.Color.White;
             this.btnSMPagoDocente.Location = new System.Drawing.Point(3, 40);
             this.btnSMPagoDocente.Name = "btnSMPagoDocente";
-            this.btnSMPagoDocente.Size = new System.Drawing.Size(237, 30);
+            this.btnSMPagoDocente.Size = new System.Drawing.Size(204, 30);
             this.btnSMPagoDocente.TabIndex = 13;
-            this.btnSMPagoDocente.Text = "Docentes";
+            this.btnSMPagoDocente.Text = "          ° Docentes";
             this.btnSMPagoDocente.UseVisualStyleBackColor = false;
             // 
             // btnSMPagoCuotaMatricula
@@ -454,10 +401,11 @@
             this.btnSMPagoCuotaMatricula.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSMPagoCuotaMatricula.Location = new System.Drawing.Point(3, 3);
             this.btnSMPagoCuotaMatricula.Name = "btnSMPagoCuotaMatricula";
-            this.btnSMPagoCuotaMatricula.Size = new System.Drawing.Size(237, 31);
+            this.btnSMPagoCuotaMatricula.Size = new System.Drawing.Size(204, 31);
             this.btnSMPagoCuotaMatricula.TabIndex = 12;
-            this.btnSMPagoCuotaMatricula.Text = "Cuota Matrìcula";
+            this.btnSMPagoCuotaMatricula.Text = " ° Cuota matricula";
             this.btnSMPagoCuotaMatricula.UseVisualStyleBackColor = false;
+            this.btnSMPagoCuotaMatricula.Click += new System.EventHandler(this.btnSMPagoCuotaMatricula_Click);
             // 
             // panSMGrupo
             // 
@@ -466,9 +414,9 @@
             this.panSMGrupo.Controls.Add(this.btnSMCrearGrupo);
             this.bunAnimSlider.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panSMGrupo, BunifuAnimatorNS.DecorationType.None);
-            this.panSMGrupo.Location = new System.Drawing.Point(0, 463);
+            this.panSMGrupo.Location = new System.Drawing.Point(22, 463);
             this.panSMGrupo.Name = "panSMGrupo";
-            this.panSMGrupo.Size = new System.Drawing.Size(240, 75);
+            this.panSMGrupo.Size = new System.Drawing.Size(210, 75);
             this.panSMGrupo.TabIndex = 12;
             this.panSMGrupo.Visible = false;
             // 
@@ -485,9 +433,9 @@
             this.btnSMAsignarDocente.ForeColor = System.Drawing.Color.White;
             this.btnSMAsignarDocente.Location = new System.Drawing.Point(3, 40);
             this.btnSMAsignarDocente.Name = "btnSMAsignarDocente";
-            this.btnSMAsignarDocente.Size = new System.Drawing.Size(237, 30);
+            this.btnSMAsignarDocente.Size = new System.Drawing.Size(204, 30);
             this.btnSMAsignarDocente.TabIndex = 13;
-            this.btnSMAsignarDocente.Text = "Asignar Docente";
+            this.btnSMAsignarDocente.Text = "          ° Asignar docente";
             this.btnSMAsignarDocente.UseVisualStyleBackColor = false;
             // 
             // btnSMCrearGrupo
@@ -504,31 +452,82 @@
             this.btnSMCrearGrupo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSMCrearGrupo.Location = new System.Drawing.Point(3, 3);
             this.btnSMCrearGrupo.Name = "btnSMCrearGrupo";
-            this.btnSMCrearGrupo.Size = new System.Drawing.Size(234, 31);
+            this.btnSMCrearGrupo.Size = new System.Drawing.Size(204, 31);
             this.btnSMCrearGrupo.TabIndex = 12;
-            this.btnSMCrearGrupo.Text = "Crear Grupo";
+            this.btnSMCrearGrupo.Text = " ° Crear grupo";
             this.btnSMCrearGrupo.UseVisualStyleBackColor = false;
+            // 
+            // panSMServicio
+            // 
+            this.panSMServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panSMServicio.Controls.Add(this.btnSMMatricula);
+            this.panSMServicio.Controls.Add(this.btnSMClasesPracticas);
+            this.bunAnimSlider.SetDecoration(this.panSMServicio, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimLogo.SetDecoration(this.panSMServicio, BunifuAnimatorNS.DecorationType.None);
+            this.panSMServicio.Location = new System.Drawing.Point(22, 463);
+            this.panSMServicio.Name = "panSMServicio";
+            this.panSMServicio.Size = new System.Drawing.Size(210, 75);
+            this.panSMServicio.TabIndex = 13;
+            this.panSMServicio.Visible = false;
+            // 
+            // btnSMMatricula
+            // 
+            this.btnSMMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSMMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunAnimLogo.SetDecoration(this.btnSMMatricula, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.btnSMMatricula, BunifuAnimatorNS.DecorationType.None);
+            this.btnSMMatricula.FlatAppearance.BorderSize = 0;
+            this.btnSMMatricula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
+            this.btnSMMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMMatricula.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSMMatricula.ForeColor = System.Drawing.Color.White;
+            this.btnSMMatricula.Location = new System.Drawing.Point(3, 40);
+            this.btnSMMatricula.Name = "btnSMMatricula";
+            this.btnSMMatricula.Size = new System.Drawing.Size(204, 30);
+            this.btnSMMatricula.TabIndex = 13;
+            this.btnSMMatricula.Text = "          ° Matriculas";
+            this.btnSMMatricula.UseVisualStyleBackColor = false;
+            this.btnSMMatricula.Click += new System.EventHandler(this.btnSMMatricula_Click);
+            // 
+            // btnSMClasesPracticas
+            // 
+            this.btnSMClasesPracticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnSMClasesPracticas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunAnimLogo.SetDecoration(this.btnSMClasesPracticas, BunifuAnimatorNS.DecorationType.None);
+            this.bunAnimSlider.SetDecoration(this.btnSMClasesPracticas, BunifuAnimatorNS.DecorationType.None);
+            this.btnSMClasesPracticas.FlatAppearance.BorderSize = 0;
+            this.btnSMClasesPracticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
+            this.btnSMClasesPracticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMClasesPracticas.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSMClasesPracticas.ForeColor = System.Drawing.Color.White;
+            this.btnSMClasesPracticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSMClasesPracticas.Location = new System.Drawing.Point(3, 3);
+            this.btnSMClasesPracticas.Name = "btnSMClasesPracticas";
+            this.btnSMClasesPracticas.Size = new System.Drawing.Size(204, 31);
+            this.btnSMClasesPracticas.TabIndex = 12;
+            this.btnSMClasesPracticas.Text = " ° Clases y/o Practicas";
+            this.btnSMClasesPracticas.UseVisualStyleBackColor = false;
             // 
             // bunAnimLogo
             // 
             this.bunAnimLogo.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.bunAnimLogo.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 1;
-            animation4.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 2F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunAnimLogo.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunAnimLogo.DefaultAnimation = animation1;
             // 
             // panel1
             // 
@@ -655,10 +654,10 @@
             this.panFooter.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
             this.panFooter.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
             this.panFooter.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
-            this.panFooter.Location = new System.Drawing.Point(240, 715);
+            this.panFooter.Location = new System.Drawing.Point(240, 703);
             this.panFooter.Name = "panFooter";
             this.panFooter.Quality = 10;
-            this.panFooter.Size = new System.Drawing.Size(1040, 34);
+            this.panFooter.Size = new System.Drawing.Size(1040, 46);
             this.panFooter.TabIndex = 5;
             // 
             // bunifuCustomLabel1
@@ -670,7 +669,7 @@
             this.bunAnimSlider.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(927, 10);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(923, 20);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(101, 15);
             this.bunifuCustomLabel1.TabIndex = 0;
@@ -680,22 +679,22 @@
             // 
             this.bunAnimSlider.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunAnimSlider.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunAnimSlider.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunAnimSlider.DefaultAnimation = animation2;
             // 
             // frmBase
             // 
@@ -718,11 +717,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBase_Load);
             this.panMenuSlider.ResumeLayout(false);
-            this.panSMServicio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoMenuSlider)).EndInit();
             this.panSMPago.ResumeLayout(false);
             this.panSMGrupo.ResumeLayout(false);
+            this.panSMServicio.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMiximixar)).EndInit();
