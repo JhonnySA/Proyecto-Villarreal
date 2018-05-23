@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaInstitucion));
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panLineaDetalle = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbxContenedor = new System.Windows.Forms.GroupBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtNombreInstitucion = new System.Windows.Forms.TextBox();
             this.txtDireccionInstitucion = new System.Windows.Forms.TextBox();
+            this.txtNombreInstitucion = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnNuevaInstitucion = new System.Windows.Forms.Button();
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -54,7 +54,7 @@
             // 
             // panTop
             // 
-            this.panTop.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
             this.panTop.Controls.Add(this.label1);
             this.panTop.Controls.Add(this.btnCerrar);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,10 +64,21 @@
             this.panTop.Size = new System.Drawing.Size(566, 46);
             this.panTop.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(248, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(254, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Centro de Esudios Personalizado \"VILLARREAL\"";
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageActive = null;
@@ -91,15 +102,6 @@
             this.panLineaDetalle.Size = new System.Drawing.Size(566, 7);
             this.panLineaDetalle.TabIndex = 11;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Centro de esudios personalizado \"VILLARREAL\"";
-            // 
             // gbxContenedor
             // 
             this.gbxContenedor.Controls.Add(this.txtDireccionInstitucion);
@@ -113,14 +115,19 @@
             this.gbxContenedor.TabStop = false;
             this.gbxContenedor.Text = "Nueva Institucion Educativa";
             // 
-            // bunifuCustomLabel1
+            // txtDireccionInstitucion
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(29, 32);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 16);
-            this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "Nombre institucion:";
+            this.txtDireccionInstitucion.Location = new System.Drawing.Point(180, 62);
+            this.txtDireccionInstitucion.Name = "txtDireccionInstitucion";
+            this.txtDireccionInstitucion.Size = new System.Drawing.Size(249, 21);
+            this.txtDireccionInstitucion.TabIndex = 3;
+            // 
+            // txtNombreInstitucion
+            // 
+            this.txtNombreInstitucion.Location = new System.Drawing.Point(180, 29);
+            this.txtNombreInstitucion.Name = "txtNombreInstitucion";
+            this.txtNombreInstitucion.Size = new System.Drawing.Size(249, 21);
+            this.txtNombreInstitucion.TabIndex = 2;
             // 
             // bunifuCustomLabel2
             // 
@@ -131,24 +138,19 @@
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Direccion institucion:";
             // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(29, 32);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 16);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "Nombre institucion:";
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // txtNombreInstitucion
-            // 
-            this.txtNombreInstitucion.Location = new System.Drawing.Point(180, 29);
-            this.txtNombreInstitucion.Name = "txtNombreInstitucion";
-            this.txtNombreInstitucion.Size = new System.Drawing.Size(249, 21);
-            this.txtNombreInstitucion.TabIndex = 2;
-            // 
-            // txtDireccionInstitucion
-            // 
-            this.txtDireccionInstitucion.Location = new System.Drawing.Point(180, 62);
-            this.txtDireccionInstitucion.Name = "txtDireccionInstitucion";
-            this.txtDireccionInstitucion.Size = new System.Drawing.Size(249, 21);
-            this.txtDireccionInstitucion.TabIndex = 3;
             // 
             // btnNuevaInstitucion
             // 

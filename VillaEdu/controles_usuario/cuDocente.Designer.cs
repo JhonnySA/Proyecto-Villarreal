@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuDocente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.btnEliminarDocente = new System.Windows.Forms.Button();
             this.btnAsignarDocente = new System.Windows.Forms.Button();
             this.btnActualizarDocente = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescarControlUsuario)).BeginInit();
@@ -59,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnAsignarGrupo);
@@ -72,7 +75,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1072, 504);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Listado de docentes:";
+            this.groupBox1.Text = "LISTADO DE DOCENTES";
             // 
             // btnNuevo
             // 
@@ -152,7 +155,7 @@
             // btnRefrescarControlUsuario
             // 
             this.btnRefrescarControlUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefrescarControlUsuario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRefrescarControlUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnRefrescarControlUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefrescarControlUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescarControlUsuario.Image")));
             this.btnRefrescarControlUsuario.ImageActive = null;
@@ -188,19 +191,19 @@
             // 
             // gvDocente
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.gvDocente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.gvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDocente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDocente.DoubleBuffered = true;
@@ -251,7 +254,9 @@
             // lblRecord
             // 
             this.lblRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecord.Location = new System.Drawing.Point(495, 533);
+            this.lblRecord.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Bold);
+            this.lblRecord.ForeColor = System.Drawing.Color.Green;
+            this.lblRecord.Location = new System.Drawing.Point(371, 534);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(583, 20);
             this.lblRecord.TabIndex = 6;
@@ -261,66 +266,100 @@
             // btnNuevoDocente
             // 
             this.btnNuevoDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoDocente.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnNuevoDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnNuevoDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoDocente.FlatAppearance.BorderSize = 0;
             this.btnNuevoDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoDocente.Location = new System.Drawing.Point(318, 571);
+            this.btnNuevoDocente.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoDocente.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoDocente.Image")));
+            this.btnNuevoDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoDocente.Location = new System.Drawing.Point(484, 652);
             this.btnNuevoDocente.Name = "btnNuevoDocente";
-            this.btnNuevoDocente.Size = new System.Drawing.Size(145, 23);
+            this.btnNuevoDocente.Size = new System.Drawing.Size(99, 29);
             this.btnNuevoDocente.TabIndex = 8;
-            this.btnNuevoDocente.Text = "Nuevo";
+            this.btnNuevoDocente.Text = "     Nuevo";
             this.btnNuevoDocente.UseVisualStyleBackColor = false;
             this.btnNuevoDocente.Click += new System.EventHandler(this.btnNuevoDocente_Click);
             // 
             // btnEliminarDocente
             // 
             this.btnEliminarDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarDocente.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnEliminarDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnEliminarDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarDocente.FlatAppearance.BorderSize = 0;
             this.btnEliminarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarDocente.Location = new System.Drawing.Point(524, 571);
+            this.btnEliminarDocente.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDocente.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarDocente.Image")));
+            this.btnEliminarDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarDocente.Location = new System.Drawing.Point(726, 652);
             this.btnEliminarDocente.Name = "btnEliminarDocente";
-            this.btnEliminarDocente.Size = new System.Drawing.Size(145, 23);
+            this.btnEliminarDocente.Size = new System.Drawing.Size(103, 29);
             this.btnEliminarDocente.TabIndex = 7;
-            this.btnEliminarDocente.Text = "Eliminar";
+            this.btnEliminarDocente.Text = "     Eliminar";
             this.btnEliminarDocente.UseVisualStyleBackColor = false;
             this.btnEliminarDocente.Click += new System.EventHandler(this.btnEliminarDocente_Click);
             // 
             // btnAsignarDocente
             // 
             this.btnAsignarDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAsignarDocente.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAsignarDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnAsignarDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsignarDocente.FlatAppearance.BorderSize = 0;
             this.btnAsignarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignarDocente.Location = new System.Drawing.Point(730, 571);
+            this.btnAsignarDocente.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarDocente.ForeColor = System.Drawing.Color.White;
+            this.btnAsignarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarDocente.Image")));
+            this.btnAsignarDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsignarDocente.Location = new System.Drawing.Point(848, 652);
             this.btnAsignarDocente.Name = "btnAsignarDocente";
-            this.btnAsignarDocente.Size = new System.Drawing.Size(145, 23);
+            this.btnAsignarDocente.Size = new System.Drawing.Size(172, 29);
             this.btnAsignarDocente.TabIndex = 6;
-            this.btnAsignarDocente.Text = "Ver detalle de deuda";
+            this.btnAsignarDocente.Text = "   Ver Detalle de Deuda";
             this.btnAsignarDocente.UseVisualStyleBackColor = false;
             // 
             // btnActualizarDocente
             // 
             this.btnActualizarDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarDocente.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnActualizarDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(215)))));
             this.btnActualizarDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarDocente.FlatAppearance.BorderSize = 0;
             this.btnActualizarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarDocente.Location = new System.Drawing.Point(933, 571);
+            this.btnActualizarDocente.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarDocente.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarDocente.Image")));
+            this.btnActualizarDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarDocente.Location = new System.Drawing.Point(601, 652);
             this.btnActualizarDocente.Name = "btnActualizarDocente";
-            this.btnActualizarDocente.Size = new System.Drawing.Size(145, 23);
+            this.btnActualizarDocente.Size = new System.Drawing.Size(110, 29);
             this.btnActualizarDocente.TabIndex = 5;
-            this.btnActualizarDocente.Text = "Actualizar";
+            this.btnActualizarDocente.Text = "     Actualizar";
             this.btnActualizarDocente.UseVisualStyleBackColor = false;
             this.btnActualizarDocente.Click += new System.EventHandler(this.btnActualizarDocente_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panel2.Location = new System.Drawing.Point(1026, 657);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(97, 27);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(54)))), ((int)(((byte)(69)))));
+            this.panel1.Location = new System.Drawing.Point(-27, 657);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(494, 27);
+            this.panel1.TabIndex = 12;
             // 
             // cuDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNuevoDocente);
             this.Controls.Add(this.btnEliminarDocente);
             this.Controls.Add(this.btnAsignarDocente);
@@ -330,7 +369,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "cuDocente";
-            this.Size = new System.Drawing.Size(1123, 643);
+            this.Size = new System.Drawing.Size(1123, 684);
             this.Load += new System.EventHandler(this.cuDocente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -364,5 +403,7 @@
         private System.Windows.Forms.TextBox txtFiltroApoderado;
         private Bunifu.Framework.UI.BunifuImageButton btnRefrescarControlUsuario;
         private System.Windows.Forms.CheckBox chxDocenteActivo;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

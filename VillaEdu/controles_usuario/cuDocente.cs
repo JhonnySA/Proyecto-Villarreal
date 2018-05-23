@@ -37,7 +37,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO", "DNI", "DIRECCION", "ESPECIALIZAD", "GRADO", "FOTO" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
+            refrescarRecord("Nùmero de Docentes: " + record().ToString());
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -215,7 +215,7 @@ namespace VillaEdu.controles_usuario
 
             doc.ShowDialog();
             cargarGrid(consulta, encabezados);
-            refrescarRecord("NUMERO DE DOCENTES: " + record());
+            refrescarRecord("Nùmero de Docentes:  " + record());
         }
 
         private void btnEliminarDocente_Click(object sender, EventArgs e)
@@ -259,7 +259,7 @@ namespace VillaEdu.controles_usuario
 
                     // Refrescar la tabla de estudiante
                     cargarGrid(consulta, encabezados);
-                    refrescarRecord("NUMERO DE DOCENTES: " + record());
+                    refrescarRecord("Nùmero de Docentes:  " + record());
                 }
 
             }
@@ -307,7 +307,7 @@ namespace VillaEdu.controles_usuario
                 encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES" };
 
                 cargarGrid(consulta, encabezados);
-                refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
+                refrescarRecord("Nùmero de Docentes:  " + record().ToString());
             }
             else
             {
@@ -318,7 +318,7 @@ namespace VillaEdu.controles_usuario
                 encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO" };
 
                 cargarGrid(consulta, encabezados);
-                refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
+                refrescarRecord("Nùmero de Docentes:  " + record().ToString());
             }
         }
 
@@ -332,7 +332,7 @@ namespace VillaEdu.controles_usuario
             encabezados = new string[] { "ID", "APELLIDO PATERNO", "APELLIDO MATERNO", "NOMBRES", "SEXO", "CELULAR", "TELEFONO", "DNI", "DIRECCION", "ESPECIALIZAD", "GRADO", "FOTO" };
 
             cargarGrid(consulta, encabezados);
-            refrescarRecord("NUMERO DE DOCENTES: " + record().ToString());
+            refrescarRecord("Nùmero de Docentes:  " + record().ToString());
         }
     }
 }

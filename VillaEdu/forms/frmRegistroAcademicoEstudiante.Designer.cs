@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroAcademicoEstudiante));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbxRegistroAcademico = new System.Windows.Forms.GroupBox();
@@ -44,13 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gvMatriculasAnteriores = new VillaEdu.controles_usuario.ComplexDataGridView();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblRecordMatricula = new System.Windows.Forms.Label();
-            this.gvMatriculasAnteriores = new VillaEdu.controles_usuario.ComplexDataGridView();
             this.gbxRegistroAcademico.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMatriculasAnteriores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // bunSinBorde
@@ -168,10 +168,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Matriculas anteriores:";
             // 
+            // gvMatriculasAnteriores
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvMatriculasAnteriores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvMatriculasAnteriores.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvMatriculasAnteriores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvMatriculasAnteriores.cadenaConsulta = null;
+            this.gvMatriculasAnteriores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvMatriculasAnteriores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gvMatriculasAnteriores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvMatriculasAnteriores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvMatriculasAnteriores.DoubleBuffered = true;
+            this.gvMatriculasAnteriores.EnableHeadersVisualStyles = false;
+            this.gvMatriculasAnteriores.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvMatriculasAnteriores.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.gvMatriculasAnteriores.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.gvMatriculasAnteriores.listaEncabezados = null;
+            this.gvMatriculasAnteriores.Location = new System.Drawing.Point(3, 17);
+            this.gvMatriculasAnteriores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gvMatriculasAnteriores.MultiSelect = false;
+            this.gvMatriculasAnteriores.Name = "gvMatriculasAnteriores";
+            this.gvMatriculasAnteriores.ReadOnly = true;
+            this.gvMatriculasAnteriores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gvMatriculasAnteriores.Size = new System.Drawing.Size(842, 161);
+            this.gvMatriculasAnteriores.TabIndex = 0;
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageActive = null;
@@ -191,39 +224,6 @@
             this.lblRecordMatricula.Size = new System.Drawing.Size(302, 13);
             this.lblRecordMatricula.TabIndex = 5;
             this.lblRecordMatricula.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // gvMatriculasAnteriores
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvMatriculasAnteriores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.gvMatriculasAnteriores.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.gvMatriculasAnteriores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvMatriculasAnteriores.cadenaConsulta = null;
-            this.gvMatriculasAnteriores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvMatriculasAnteriores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gvMatriculasAnteriores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMatriculasAnteriores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvMatriculasAnteriores.DoubleBuffered = true;
-            this.gvMatriculasAnteriores.EnableHeadersVisualStyles = false;
-            this.gvMatriculasAnteriores.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gvMatriculasAnteriores.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.gvMatriculasAnteriores.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.gvMatriculasAnteriores.listaEncabezados = null;
-            this.gvMatriculasAnteriores.Location = new System.Drawing.Point(3, 17);
-            this.gvMatriculasAnteriores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gvMatriculasAnteriores.MultiSelect = false;
-            this.gvMatriculasAnteriores.Name = "gvMatriculasAnteriores";
-            this.gvMatriculasAnteriores.ReadOnly = true;
-            this.gvMatriculasAnteriores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gvMatriculasAnteriores.Size = new System.Drawing.Size(842, 161);
-            this.gvMatriculasAnteriores.TabIndex = 0;
             // 
             // frmRegistroAcademicoEstudiante
             // 
@@ -245,8 +245,8 @@
             this.gbxRegistroAcademico.ResumeLayout(false);
             this.gbxRegistroAcademico.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMatriculasAnteriores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }

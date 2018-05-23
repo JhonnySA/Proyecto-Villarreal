@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             this.bunSinBorde = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunMoverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panLineaTopDetalle = new System.Windows.Forms.Panel();
@@ -120,9 +120,9 @@
             this.panMenuSlider.Controls.Add(this.btnEstudiante);
             this.panMenuSlider.Controls.Add(this.pbxLogo);
             this.panMenuSlider.Controls.Add(this.pbxLogoMenuSlider);
+            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.panMenuSlider.Controls.Add(this.panSMPago);
             this.panMenuSlider.Controls.Add(this.panSMGrupo);
-            this.panMenuSlider.Controls.Add(this.panSMServicio);
             this.bunAnimSlider.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panMenuSlider, BunifuAnimatorNS.DecorationType.None);
             this.panMenuSlider.Dock = System.Windows.Forms.DockStyle.Left;
@@ -384,7 +384,7 @@
             this.btnSMAsignarDocente.Name = "btnSMAsignarDocente";
             this.btnSMAsignarDocente.Size = new System.Drawing.Size(237, 30);
             this.btnSMAsignarDocente.TabIndex = 13;
-            this.btnSMAsignarDocente.Text = "Asignar docente";
+            this.btnSMAsignarDocente.Text = "Asignar Docente";
             this.btnSMAsignarDocente.UseVisualStyleBackColor = false;
             // 
             // btnSMCrearGrupo
@@ -403,7 +403,7 @@
             this.btnSMCrearGrupo.Name = "btnSMCrearGrupo";
             this.btnSMCrearGrupo.Size = new System.Drawing.Size(237, 31);
             this.btnSMCrearGrupo.TabIndex = 12;
-            this.btnSMCrearGrupo.Text = "Crear grupo";
+            this.btnSMCrearGrupo.Text = "Crear Grupo";
             this.btnSMCrearGrupo.UseVisualStyleBackColor = false;
             // 
             // panSMServicio
@@ -464,9 +464,9 @@
             this.panSMPago.Controls.Add(this.btnSMPagoCuotaMatricula);
             this.bunAnimSlider.SetDecoration(this.panSMPago, BunifuAnimatorNS.DecorationType.None);
             this.bunAnimLogo.SetDecoration(this.panSMPago, BunifuAnimatorNS.DecorationType.None);
-            this.panSMPago.Location = new System.Drawing.Point(22, 463);
+            this.panSMPago.Location = new System.Drawing.Point(0, 463);
             this.panSMPago.Name = "panSMPago";
-            this.panSMPago.Size = new System.Drawing.Size(210, 75);
+            this.panSMPago.Size = new System.Drawing.Size(240, 75);
             this.panSMPago.TabIndex = 14;
             this.panSMPago.Visible = false;
             // 
@@ -512,22 +512,22 @@
             // 
             this.bunAnimLogo.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.bunAnimLogo.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 1;
-            animation4.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 2F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunAnimLogo.DefaultAnimation = animation4;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 1;
+            animation6.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 2F;
+            animation6.TransparencyCoeff = 0F;
+            this.bunAnimLogo.DefaultAnimation = animation6;
             // 
             // panel1
             // 
@@ -679,22 +679,22 @@
             // 
             this.bunAnimSlider.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunAnimSlider.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunAnimSlider.DefaultAnimation = animation3;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bunAnimSlider.DefaultAnimation = animation5;
             // 
             // frmBase
             // 

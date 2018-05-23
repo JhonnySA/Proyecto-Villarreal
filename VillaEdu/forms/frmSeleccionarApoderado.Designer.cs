@@ -35,13 +35,13 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panLineaDetalle = new System.Windows.Forms.Panel();
             this.panTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panFiltroApoderado = new System.Windows.Forms.Panel();
             this.txtFiltroApoderado = new System.Windows.Forms.TextBox();
             this.gbxContenedor = new System.Windows.Forms.GroupBox();
             this.gvSeleccionarApoderado = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.lblRecord = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panFiltroApoderado.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             // panTop
             // 
-            this.panTop.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
             this.panTop.Controls.Add(this.label1);
             this.panTop.Controls.Add(this.btnCerrar);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,10 +76,21 @@
             this.panTop.Size = new System.Drawing.Size(817, 37);
             this.panTop.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(489, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(254, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Centro de Esudios Personalizado \"VILLARREAL\"";
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageActive = null;
@@ -155,15 +166,6 @@
             this.lblRecord.Size = new System.Drawing.Size(295, 25);
             this.lblRecord.TabIndex = 5;
             this.lblRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(388, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Centro de esudios personalizado \"VILLARREAL\"";
             // 
             // frmSeleccionarApoderado
             // 
