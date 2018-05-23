@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuEstudiante));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxContenedor = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefrescarControlUsuario = new Bunifu.Framework.UI.BunifuImageButton();
@@ -118,19 +118,19 @@
             // 
             // gvEstudiante
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvEstudiante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvEstudiante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.gvEstudiante.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvEstudiante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvEstudiante.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvEstudiante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvEstudiante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.gvEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvEstudiante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvEstudiante.DoubleBuffered = true;
@@ -208,7 +208,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(773, 651);
+            this.btnActualizar.Location = new System.Drawing.Point(662, 651);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(92, 29);
             this.btnActualizar.TabIndex = 1;
@@ -228,11 +228,11 @@
             this.btnDetalleDeuda.ForeColor = System.Drawing.Color.White;
             this.btnDetalleDeuda.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleDeuda.Image")));
             this.btnDetalleDeuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleDeuda.Location = new System.Drawing.Point(895, 651);
+            this.btnDetalleDeuda.Location = new System.Drawing.Point(884, 651);
             this.btnDetalleDeuda.Name = "btnDetalleDeuda";
             this.btnDetalleDeuda.Size = new System.Drawing.Size(152, 29);
             this.btnDetalleDeuda.TabIndex = 2;
-            this.btnDetalleDeuda.Text = "Ver detalle de deuda";
+            this.btnDetalleDeuda.Text = "Ver Detalle de Deuda";
             this.btnDetalleDeuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetalleDeuda.UseVisualStyleBackColor = false;
             this.btnDetalleDeuda.Visible = false;
@@ -248,12 +248,11 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(664, 651);
+            this.btnEliminar.Location = new System.Drawing.Point(773, 651);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(91, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(87, 29);
             this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Text = "        Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 

@@ -57,8 +57,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnNuevoApoderado = new System.Windows.Forms.Button();
             this.btnActualizarApoderado = new System.Windows.Forms.Button();
+            this.btnNuevoApoderado = new System.Windows.Forms.Button();
             this.PageEstudiante = new MetroFramework.Controls.MetroTabPage();
             this.btnRestaurarEstudiante = new System.Windows.Forms.Button();
             this.btnActualizarEstudiante = new System.Windows.Forms.Button();
@@ -107,7 +107,7 @@
             // 
             // panTop
             // 
-            this.panTop.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
             this.panTop.Controls.Add(this.label1);
             this.panTop.Controls.Add(this.btnCerrar);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -119,11 +119,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(570, 11);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(695, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 16);
+            this.label1.Size = new System.Drawing.Size(254, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Centro de esudios personalizado \"VILLARREAL\"";
+            this.label1.Text = "Centro de Esudios Personalizado \"VILLARREAL\"";
             // 
             // btnCerrar
             // 
@@ -145,8 +147,8 @@
             // 
             this.PageApoderado.Controls.Add(this.btnRestaurarApoderado);
             this.PageApoderado.Controls.Add(this.groupBox2);
-            this.PageApoderado.Controls.Add(this.btnActualizarApoderado);
             this.PageApoderado.Controls.Add(this.btnNuevoApoderado);
+            this.PageApoderado.Controls.Add(this.btnActualizarApoderado);
             this.PageApoderado.HorizontalScrollbarBarColor = true;
             this.PageApoderado.HorizontalScrollbarHighlightOnWheel = false;
             this.PageApoderado.HorizontalScrollbarSize = 2;
@@ -162,15 +164,19 @@
             // btnRestaurarApoderado
             // 
             this.btnRestaurarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnRestaurarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnRestaurarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurarApoderado.FlatAppearance.BorderSize = 0;
             this.btnRestaurarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarApoderado.Location = new System.Drawing.Point(419, 316);
+            this.btnRestaurarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarApoderado.ForeColor = System.Drawing.Color.White;
+            this.btnRestaurarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarApoderado.Image")));
+            this.btnRestaurarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestaurarApoderado.Location = new System.Drawing.Point(336, 316);
             this.btnRestaurarApoderado.Name = "btnRestaurarApoderado";
-            this.btnRestaurarApoderado.Size = new System.Drawing.Size(211, 23);
+            this.btnRestaurarApoderado.Size = new System.Drawing.Size(115, 29);
             this.btnRestaurarApoderado.TabIndex = 19;
-            this.btnRestaurarApoderado.Text = "Restaurar";
+            this.btnRestaurarApoderado.Text = "     Restaurar";
             this.btnRestaurarApoderado.UseVisualStyleBackColor = false;
             this.btnRestaurarApoderado.Visible = false;
             this.btnRestaurarApoderado.Click += new System.EventHandler(this.btnRestaurarApoderado_Click);
@@ -236,15 +242,19 @@
             // btnSeleccionarApoderado
             // 
             this.btnSeleccionarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSeleccionarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnSeleccionarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionarApoderado.FlatAppearance.BorderSize = 0;
             this.btnSeleccionarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarApoderado.Location = new System.Drawing.Point(685, 217);
+            this.btnSeleccionarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarApoderado.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarApoderado.Image")));
+            this.btnSeleccionarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeleccionarApoderado.Location = new System.Drawing.Point(758, 233);
             this.btnSeleccionarApoderado.Name = "btnSeleccionarApoderado";
-            this.btnSeleccionarApoderado.Size = new System.Drawing.Size(211, 23);
+            this.btnSeleccionarApoderado.Size = new System.Drawing.Size(189, 29);
             this.btnSeleccionarApoderado.TabIndex = 19;
-            this.btnSeleccionarApoderado.Text = "Seleccionar Apoderado";
+            this.btnSeleccionarApoderado.Text = "     Seleccionar Apoderado";
             this.btnSeleccionarApoderado.UseVisualStyleBackColor = false;
             this.btnSeleccionarApoderado.Visible = false;
             this.btnSeleccionarApoderado.Click += new System.EventHandler(this.btnSeleccionarApoderado_Click);
@@ -383,44 +393,52 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Apoderado paterno:";
             // 
-            // btnNuevoApoderado
-            // 
-            this.btnNuevoApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoApoderado.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnNuevoApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoApoderado.FlatAppearance.BorderSize = 0;
-            this.btnNuevoApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoApoderado.Location = new System.Drawing.Point(701, 316);
-            this.btnNuevoApoderado.Name = "btnNuevoApoderado";
-            this.btnNuevoApoderado.Size = new System.Drawing.Size(211, 23);
-            this.btnNuevoApoderado.TabIndex = 17;
-            this.btnNuevoApoderado.Text = "Nuevo";
-            this.btnNuevoApoderado.UseVisualStyleBackColor = false;
-            this.btnNuevoApoderado.Visible = false;
-            this.btnNuevoApoderado.Click += new System.EventHandler(this.btnNuevoApoderado_Click);
-            // 
             // btnActualizarApoderado
             // 
             this.btnActualizarApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarApoderado.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnActualizarApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnActualizarApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarApoderado.FlatAppearance.BorderSize = 0;
             this.btnActualizarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarApoderado.Location = new System.Drawing.Point(701, 316);
+            this.btnActualizarApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarApoderado.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarApoderado.Image")));
+            this.btnActualizarApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarApoderado.Location = new System.Drawing.Point(487, 316);
             this.btnActualizarApoderado.Name = "btnActualizarApoderado";
-            this.btnActualizarApoderado.Size = new System.Drawing.Size(211, 23);
+            this.btnActualizarApoderado.Size = new System.Drawing.Size(110, 29);
             this.btnActualizarApoderado.TabIndex = 16;
-            this.btnActualizarApoderado.Text = "Actualizar";
+            this.btnActualizarApoderado.Text = "     Actualizar";
             this.btnActualizarApoderado.UseVisualStyleBackColor = false;
             this.btnActualizarApoderado.Visible = false;
             this.btnActualizarApoderado.Click += new System.EventHandler(this.btnActualizarApoderado_Click);
             // 
+            // btnNuevoApoderado
+            // 
+            this.btnNuevoApoderado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoApoderado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
+            this.btnNuevoApoderado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoApoderado.FlatAppearance.BorderSize = 0;
+            this.btnNuevoApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoApoderado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoApoderado.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoApoderado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoApoderado.Image")));
+            this.btnNuevoApoderado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoApoderado.Location = new System.Drawing.Point(186, 316);
+            this.btnNuevoApoderado.Name = "btnNuevoApoderado";
+            this.btnNuevoApoderado.Size = new System.Drawing.Size(110, 29);
+            this.btnNuevoApoderado.TabIndex = 17;
+            this.btnNuevoApoderado.Text = "     Nuevo";
+            this.btnNuevoApoderado.UseVisualStyleBackColor = false;
+            this.btnNuevoApoderado.Visible = false;
+            this.btnNuevoApoderado.Click += new System.EventHandler(this.btnNuevoApoderado_Click);
+            // 
             // PageEstudiante
             // 
             this.PageEstudiante.Controls.Add(this.btnRestaurarEstudiante);
-            this.PageEstudiante.Controls.Add(this.btnActualizarEstudiante);
             this.PageEstudiante.Controls.Add(this.groupBox1);
             this.PageEstudiante.Controls.Add(this.btnCrearEstudiante);
+            this.PageEstudiante.Controls.Add(this.btnActualizarEstudiante);
             this.PageEstudiante.HorizontalScrollbarBarColor = true;
             this.PageEstudiante.HorizontalScrollbarHighlightOnWheel = false;
             this.PageEstudiante.HorizontalScrollbarSize = 2;
@@ -436,15 +454,19 @@
             // btnRestaurarEstudiante
             // 
             this.btnRestaurarEstudiante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurarEstudiante.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnRestaurarEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnRestaurarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurarEstudiante.FlatAppearance.BorderSize = 0;
             this.btnRestaurarEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarEstudiante.Location = new System.Drawing.Point(462, 313);
+            this.btnRestaurarEstudiante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarEstudiante.ForeColor = System.Drawing.Color.White;
+            this.btnRestaurarEstudiante.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarEstudiante.Image")));
+            this.btnRestaurarEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestaurarEstudiante.Location = new System.Drawing.Point(319, 323);
             this.btnRestaurarEstudiante.Name = "btnRestaurarEstudiante";
-            this.btnRestaurarEstudiante.Size = new System.Drawing.Size(200, 23);
+            this.btnRestaurarEstudiante.Size = new System.Drawing.Size(142, 29);
             this.btnRestaurarEstudiante.TabIndex = 15;
-            this.btnRestaurarEstudiante.Text = "Restaurar datos";
+            this.btnRestaurarEstudiante.Text = "     Restaurar Datos";
             this.btnRestaurarEstudiante.UseVisualStyleBackColor = false;
             this.btnRestaurarEstudiante.Visible = false;
             this.btnRestaurarEstudiante.Click += new System.EventHandler(this.btnRestaurarEstudiante_Click);
@@ -452,15 +474,19 @@
             // btnActualizarEstudiante
             // 
             this.btnActualizarEstudiante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnActualizarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarEstudiante.FlatAppearance.BorderSize = 0;
             this.btnActualizarEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarEstudiante.Location = new System.Drawing.Point(725, 313);
+            this.btnActualizarEstudiante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarEstudiante.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarEstudiante.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarEstudiante.Image")));
+            this.btnActualizarEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarEstudiante.Location = new System.Drawing.Point(195, 323);
             this.btnActualizarEstudiante.Name = "btnActualizarEstudiante";
-            this.btnActualizarEstudiante.Size = new System.Drawing.Size(200, 23);
+            this.btnActualizarEstudiante.Size = new System.Drawing.Size(107, 29);
             this.btnActualizarEstudiante.TabIndex = 13;
-            this.btnActualizarEstudiante.Text = "Actualizar";
+            this.btnActualizarEstudiante.Text = "    Actualizar";
             this.btnActualizarEstudiante.UseVisualStyleBackColor = false;
             this.btnActualizarEstudiante.Visible = false;
             this.btnActualizarEstudiante.Click += new System.EventHandler(this.btnActualizarEstudiante_Click);
@@ -539,15 +565,19 @@
             // btnRegistroAcademico
             // 
             this.btnRegistroAcademico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistroAcademico.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnRegistroAcademico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnRegistroAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistroAcademico.FlatAppearance.BorderSize = 0;
             this.btnRegistroAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistroAcademico.Location = new System.Drawing.Point(702, 224);
+            this.btnRegistroAcademico.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroAcademico.ForeColor = System.Drawing.Color.White;
+            this.btnRegistroAcademico.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroAcademico.Image")));
+            this.btnRegistroAcademico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistroAcademico.Location = new System.Drawing.Point(763, 233);
             this.btnRegistroAcademico.Name = "btnRegistroAcademico";
-            this.btnRegistroAcademico.Size = new System.Drawing.Size(200, 23);
+            this.btnRegistroAcademico.Size = new System.Drawing.Size(161, 29);
             this.btnRegistroAcademico.TabIndex = 12;
-            this.btnRegistroAcademico.Text = "Registro académico";
+            this.btnRegistroAcademico.Text = "     Registro académico";
             this.btnRegistroAcademico.UseVisualStyleBackColor = false;
             this.btnRegistroAcademico.Visible = false;
             this.btnRegistroAcademico.Click += new System.EventHandler(this.btnRegistroAcademico_Click);
@@ -634,15 +664,19 @@
             // btnCrearEstudiante
             // 
             this.btnCrearEstudiante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCrearEstudiante.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnCrearEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(120)))), ((int)(((byte)(112)))));
             this.btnCrearEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrearEstudiante.FlatAppearance.BorderSize = 0;
             this.btnCrearEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearEstudiante.Location = new System.Drawing.Point(725, 313);
+            this.btnCrearEstudiante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearEstudiante.ForeColor = System.Drawing.Color.White;
+            this.btnCrearEstudiante.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearEstudiante.Image")));
+            this.btnCrearEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrearEstudiante.Location = new System.Drawing.Point(195, 323);
             this.btnCrearEstudiante.Name = "btnCrearEstudiante";
-            this.btnCrearEstudiante.Size = new System.Drawing.Size(200, 23);
+            this.btnCrearEstudiante.Size = new System.Drawing.Size(107, 29);
             this.btnCrearEstudiante.TabIndex = 14;
-            this.btnCrearEstudiante.Text = "Crear";
+            this.btnCrearEstudiante.Text = "     Crear";
             this.btnCrearEstudiante.UseVisualStyleBackColor = false;
             this.btnCrearEstudiante.Visible = false;
             this.btnCrearEstudiante.Click += new System.EventHandler(this.btnCrearEstudiante_Click);
@@ -654,7 +688,7 @@
             this.tabEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabEstudiante.Location = new System.Drawing.Point(21, 67);
             this.tabEstudiante.Name = "tabEstudiante";
-            this.tabEstudiante.SelectedIndex = 0;
+            this.tabEstudiante.SelectedIndex = 1;
             this.tabEstudiante.Size = new System.Drawing.Size(992, 394);
             this.tabEstudiante.TabIndex = 2;
             this.tabEstudiante.Theme = MetroFramework.MetroThemeStyle.Light;
