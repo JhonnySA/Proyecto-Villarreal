@@ -654,7 +654,7 @@
             this.tabEstudiante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabEstudiante.Location = new System.Drawing.Point(21, 67);
             this.tabEstudiante.Name = "tabEstudiante";
-            this.tabEstudiante.SelectedIndex = 1;
+            this.tabEstudiante.SelectedIndex = 0;
             this.tabEstudiante.Size = new System.Drawing.Size(992, 394);
             this.tabEstudiante.TabIndex = 2;
             this.tabEstudiante.Theme = MetroFramework.MetroThemeStyle.Light;

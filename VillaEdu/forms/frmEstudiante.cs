@@ -492,7 +492,7 @@ namespace VillaEdu.forms
                 numero += numeros[i];
             }
 
-           /* try
+            try
             {
                 if (int.TryParse(txtPaternoApoderado.Text, out num))
                 {
@@ -551,7 +551,7 @@ namespace VillaEdu.forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
             return valor;
         }
 
@@ -563,7 +563,7 @@ namespace VillaEdu.forms
             bool valor = true;
             int num;
 
-           /* try
+            try
             {
                 if (int.TryParse(txtPaternoEstudiante.Text, out num))
                 {
@@ -604,7 +604,7 @@ namespace VillaEdu.forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
             return valor;
         }
 
@@ -682,7 +682,7 @@ namespace VillaEdu.forms
         {
             int num;
 
-           /* if (int.TryParse(txtPaternoApoderado.Text, out num))
+            if (int.TryParse(txtPaternoApoderado.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtPaternoApoderado, "El apellido paterno no debe ser un numero !!!");            
             }
@@ -695,14 +695,14 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtPaternoApoderado, "");
-            }*/
+            }
         }
 
         private void txtMaternoApoderado_Validating(object sender, CancelEventArgs e)
         {
             int num;
 
-           /* if (int.TryParse(txtMaternoApoderado.Text, out num))
+            if (int.TryParse(txtMaternoApoderado.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtMaternoApoderado, "El apellido materno no debe ser un numero !!!");            
             }
@@ -715,14 +715,14 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtMaternoApoderado, "");
-            }*/
+            }
         }
 
         private void txtNombreApoderado_Validating(object sender, CancelEventArgs e)
         {
             int num;
 
-            /*if (int.TryParse(txtNombreApoderado.Text, out num))
+            if (int.TryParse(txtNombreApoderado.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtNombreApoderado, "El nombre no debe ser un numero !!!");            
             }
@@ -735,7 +735,7 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtNombreApoderado, "");
-            }*/
+            }
         }
 
         private void txtCelularApoderado_Validating(object sender, CancelEventArgs e)
@@ -748,7 +748,7 @@ namespace VillaEdu.forms
                 numero += numeros[i];
             }
 
-           /* if (numero.Length < 9)
+            if (numero.Length < 9)
             {
                 eprCamposObligatorios.SetError(txtCelularApoderado, "El campo celular debe contener 9 digitos !!!");
             }
@@ -756,14 +756,14 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtCelularApoderado, "");
-            }   */         
+            }            
         }
 
         private void txtDireccionApoderado_Validating(object sender, CancelEventArgs e)
         {
             int num;
 
-           /* if (int.TryParse(txtDireccionApoderado.Text, out num))
+            if (int.TryParse(txtDireccionApoderado.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtDireccionApoderado, "El nombre no debe ser solo un numero !!!");             
             }
@@ -776,7 +776,7 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtDireccionApoderado, "");
-            }*/
+            }
         }
 
         /// Validaciones icono de error campos obligatorios para los campos del estudiante
@@ -784,7 +784,7 @@ namespace VillaEdu.forms
         {
             int num;
 
-            /*if (int.TryParse(txtPaternoEstudiante.Text, out num))
+            if (int.TryParse(txtPaternoEstudiante.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtPaternoEstudiante, "El apellido paterno no debe ser un numero !!!");
             }
@@ -797,14 +797,14 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtPaternoEstudiante, "");
-            }*/
+            }
         }
 
         private void txtMaternoEstudiante_Validating(object sender, CancelEventArgs e)
         {
             int num;
 
-           /* if (int.TryParse(txtMaternoEstudiante.Text, out num))
+            if (int.TryParse(txtMaternoEstudiante.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtMaternoEstudiante, "El apellido materno no debe ser un numero !!!");
             }
@@ -817,14 +817,14 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtMaternoEstudiante, "");
-            }*/
+            }
         }
 
         private void txtNombrestudiante_Validating(object sender, CancelEventArgs e)
         {
             int num;
 
-            /*if (int.TryParse(txtNombrestudiante.Text, out num))
+            if (int.TryParse(txtNombrestudiante.Text, out num))
             {
                 eprCamposObligatorios.SetError(txtNombrestudiante, "El nombre no debe ser un numero !!!");           
             }
@@ -837,7 +837,7 @@ namespace VillaEdu.forms
             else
             {
                 eprCamposObligatorios.SetError(txtNombrestudiante, "");
-            }*/
+            }
         }
     }
 }
